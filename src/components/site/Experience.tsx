@@ -22,7 +22,7 @@ export function Experience() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="ko-text mt-6 max-w-4xl text-xl leading-[1.45] tracking-tight lg:mt-8 lg:whitespace-nowrap lg:text-[1.55vw]"
+        className="ko-text mt-6 max-w-5xl text-xl leading-[1.45] tracking-tight lg:mt-8 lg:whitespace-nowrap lg:text-[1.65vw]"
       >
         {transitionFirst},
         <br />
