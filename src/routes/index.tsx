@@ -9,25 +9,26 @@ import { Cursor } from "@/components/site/Cursor";
 import { GridLines } from "@/components/site/GridLines";
 import { Frame } from "@/components/site/Frame";
 import { Hero } from "@/components/site/Hero";
-import { WorkGrid } from "@/components/site/WorkGrid";
+import { Investment } from "@/components/site/Investment";
+import { Bridge } from "@/components/site/Bridge";
+import { OpenInnovation } from "@/components/site/OpenInnovation";
+import { Experience } from "@/components/site/Experience";
+import { Capabilities } from "@/components/site/Capabilities";
+import { About } from "@/components/site/About";
 import { Contact } from "@/components/site/Contact";
+
+const TITLE = "Son Hayoung — Investment & Open Innovation Portfolio";
+const DESCRIPTION =
+  "27 investments executed, 104 startups reviewed, and corporate open innovation programs with Samsung, IBK and Hyundai — the portfolio of Son Hayoung.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Hayoung — Design & Engineering Portfolio" },
-      {
-        name: "description",
-        content:
-          "Portfolio of Hayoung, a digital product designer working across design systems, interface craft and front-end engineering.",
-      },
-      { property: "og:title", content: "Hayoung — Design & Engineering Portfolio" },
-      {
-        property: "og:description",
-        content:
-          "Selected work in product design, design systems and design engineering by Hayoung.",
-      },
-      { property: "og:type", content: "website" },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
@@ -58,7 +59,12 @@ function Home() {
 
       <main className="relative z-10">
         <Hero />
-        <WorkGrid />
+        <Investment />
+        <Bridge />
+        <OpenInnovation />
+        <Experience />
+        <Capabilities />
+        <About />
         <Contact />
       </main>
     </RevealContext.Provider>
