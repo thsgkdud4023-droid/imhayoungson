@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { NAV, RESUME_HREF } from "@/lib/portfolio-data";
 import { useReveal } from "./reveal";
 
 function useClock() {
@@ -55,7 +56,7 @@ export function Frame() {
   };
 
   return (
-    <header className="pointer-events-none fixed inset-0 z-50 flex flex-col justify-between">
+    <header className="hud-invert pointer-events-none fixed inset-0 z-50 flex flex-col justify-between">
       <motion.div
         {...fade}
         className="flex items-center justify-between px-4 py-4 lg:px-14 lg:py-7"
@@ -65,15 +66,22 @@ export function Frame() {
           className="dot-hit pointer-events-auto p-2 font-sans text-base font-bold uppercase"
           style={{ fontVariationSettings: '"wght" 800, "wdth" 118' }}
         >
-          Hayoung.Design
+          Son Hayoung
         </a>
         <nav className="pointer-events-auto flex items-center gap-x-1 lg:gap-x-3">
-          <button type="button" onClick={() => scrollTo("work")} className="dot-hit meta cursor-pointer p-2">
-            Work
-          </button>
-          <button type="button" onClick={() => scrollTo("contact")} className="dot-hit meta cursor-pointer p-2">
-            Contact
-          </button>
+          {NAV.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => scrollTo(item.id)}
+              className="dot-hit meta hidden cursor-pointer p-2 sm:block"
+            >
+              {item.label}
+            </button>
+          ))}
+          <a href={RESUME_HREF} className="dot-hit meta p-2">
+            Resume ↗
+          </a>
           <button
             type="button"
             onClick={() => setDark((v) => !v)}
@@ -89,14 +97,14 @@ export function Frame() {
         {...fade}
         className="flex items-end justify-between px-4 py-4 lg:px-14 lg:py-7"
       >
-        <span className="meta p-2 text-muted-foreground">
+        <span className="meta p-2">
           <span className="hidden lg:inline">GMT+9 KR </span>
           {time}
         </span>
-        <span className="meta hidden p-2 text-muted-foreground lg:inline">
+        <span className="meta hidden p-2 lg:inline">
           {pad(x)} X {pad(y)} Y
         </span>
-        <span className="meta p-2 text-muted-foreground">©{new Date().getFullYear()}</span>
+        <span className="meta p-2">©{new Date().getFullYear()}</span>
       </motion.div>
     </header>
   );
