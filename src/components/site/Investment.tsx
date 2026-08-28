@@ -42,7 +42,7 @@ export function Investment() {
         ))}
       </h2>
 
-      <div className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/85">
+      <div className="mt-8 max-w-3xl text-xl leading-relaxed text-foreground/85 lg:text-2xl">
         {INVESTMENT.ko.map((line) => (
           <p key={line}>{line}</p>
         ))}
