@@ -133,7 +133,7 @@ export const OPEN_INNOVATION = {
       category: "FinTech · AI · Data · Financial Operations",
       message:
         "금융 현업의 수시 과제를 스타트업과 구체화하고, PoC 계획 수립부터 실행 과정까지 현업-기업 간 협업을 조율했습니다.",
-      counts: [],
+      counts: [] as { value: number; label: string }[],
       funnel: { steps: ["12", "3", "1"], labels: ["지원", "발표평가", "최종선정"] },
       stats: [],
       flow: ["Needs Discovery", "Sourcing", "Selection", "PoC"],
