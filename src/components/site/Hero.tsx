@@ -92,7 +92,7 @@ export function Hero() {
           {HERO.ko.map((line) => (
             <p
               key={line}
-              className="tight-display text-2xl font-black leading-[1.2] tracking-[-0.02em] text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.18)] lg:text-[2.1vw]"
+              className="tight-display text-2xl font-black leading-[1.2] tracking-[-0.02em] text-foreground lg:text-[2.1vw]"
             >
               {line}
             </p>
