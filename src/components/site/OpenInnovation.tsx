@@ -122,6 +122,8 @@ export function OpenInnovation() {
                 )}
               </div>
             </div>
+            <PosterPanel id={p.id} caption={`${p.client} · ${p.program}`} />
+            </div>
           </motion.article>
         ))}
       </div>
