@@ -41,7 +41,12 @@ export function OpenInnovation() {
                 <h3 className="tight-display mt-3 text-[13vw] leading-[0.86] lg:text-[4.8vw]">
                   {p.program}
                 </h3>
-                <p className="meta mt-4 inline-block bg-secondary px-2 py-1">{p.category}</p>
+                <div className="meta mt-4">
+                  <span className="opacity-60">모집 분야</span>
+                  <span className="ml-2 inline-block bg-secondary px-2 py-1">
+                    {p.recruitment.join(" · ")}
+                  </span>
+                </div>
 
                 {p.counts.length > 0 && (
                   <div className="tight-display mt-8 text-[7vw] leading-tight lg:text-[1.9vw]">

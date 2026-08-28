@@ -11,7 +11,7 @@ export const RESUME_HREF = "#contact";
 
 export const HERO = {
   titleLines: ["Investment,", "with an Operator's", "Perspective."],
-  ko: "투자 검토와 집행으로 커리어를 시작해, 현재는 대기업과 스타트업의 협업을 만드는 오픈이노베이션 업무를 수행하고 있습니다.",
+  ko: "투자 검토와 집행으로 커리어를 시작해, 현재는 대기업과 스타트업을 연결하는 오픈이노베이션 업무를 수행하고 있습니다.",
   kicker: "Investment · Fund Operations · Portfolio · Open Innovation",
   primaryStats: [
     { value: 27, label: "투자집행 기업" },
@@ -43,7 +43,7 @@ export const EXPERIENCE = {
     },
   ],
   transition:
-    "투자 검토와 집행 경험을 바탕으로, 현재는 대기업 현업의 수요를 스타트업과 연결하는 오픈이노베이션 업무를 수행하고 있습니다.",
+    "투자 관점에서 기업을 검토하던 경험을 바탕으로, 현재는 기업과 스타트업이 실제로 협업하는 과정까지 경험의 범위를 확장하고 있습니다.",
 };
 
 export const INVESTMENT = {
@@ -110,7 +110,7 @@ export const INVESTMENT = {
       body: "피투자기업의 주요 현황을 모니터링하고 투자 이후 사후관리 및 조합 보고 업무를 수행했습니다.",
       bullets: [],
       process: [],
-      tags: ["Portfolio Monitoring", "KIIPS", "Business Reporting", "Follow-up"],
+      tags: ["포트폴리오 모니터링", "KIIPS", "조합 보고", "후속관리"],
     },
   ],
   government: [
@@ -131,6 +131,7 @@ export const OPEN_INNOVATION = {
       client: "IBK기업은행",
       program: "1st LAB",
       category: "FinTech · AI · Data · Financial Operations",
+      recruitment: ["핀테크", "AI", "데이터", "금융업무 혁신"],
       message:
         "금융 현업의 수시 과제를 스타트업과 구체화하고, PoC 계획 수립부터 실행 과정까지 현업-기업 간 협업을 조율했습니다.",
       counts: [] as { value: number; label: string }[],
@@ -146,6 +147,7 @@ export const OPEN_INNOVATION = {
       client: "삼성웰스토리",
       program: "W.I.T",
       category: "FoodTech · Healthcare · ESG · Smart Factory · AI",
+      recruitment: ["푸드테크", "헬스케어", "ESG", "스마트팩토리", "AI"],
       message:
         "현업부서별 협업과제에 맞춰 스타트업 선발을 지원하고, 선정기업과 현업부서 간 PoC 진행현황 및 정기미팅을 관리했습니다.",
       counts: [],
@@ -165,6 +167,7 @@ export const OPEN_INNOVATION = {
       client: "현대자동차그룹",
       program: "ZERO1NE",
       category: "Defense · Deep Tech · Startup Acceleration",
+      recruitment: ["AI/소프트웨어", "드론", "사이버", "센서", "반도체"],
       message:
         "방산 분야 기술기업 397개사를 조사해 기술영역별 후보군을 구축하고, ZERO1NE Sprint에서는 선정 7개사의 멘토링 및 육성 프로그램 운영을 지원했습니다.",
       counts: [],
@@ -183,6 +186,7 @@ export const OPEN_INNOVATION = {
       client: "현대홈쇼핑",
       program: "H.I.G.H",
       category: "Commerce · AI · Product · Platform",
+      recruitment: ["커머스", "AI", "상품", "플랫폼"],
       message:
         "정규 모집 운영뿐 아니라 신규 현업 기술수요가 발생했을 때 적합한 기술기업을 직접 탐색·추천하는 타깃 소싱을 수행했습니다.",
       counts: [],
@@ -191,8 +195,7 @@ export const OPEN_INNOVATION = {
       flow: [],
       bullets: [
         "현업 협업과제 기반 스타트업 모집 및 선발",
-        "현업 기술수요에 맞는 스타트업 직접 소싱",
-        "정규 모집 이후 신규 기술수요에 대한 후보기업 탐색 및 추천",
+        "신규 기술수요 발생 시 적합 스타트업 직접 소싱·추천",
       ],
       tags: [],
       highlight: "From open call to targeted sourcing.",
@@ -209,7 +212,7 @@ export const ABOUT = {
   headline: ["I look at startups from both sides", "— investment and collaboration."],
   paragraphs: [
     "대기업 오픈이노베이션 현장에서 현업이 어떤 문제를 가지고 있고, 어떤 스타트업과 기술을 실제로 필요로 하는지 가까이에서 경험했습니다.",
-    "투자와 사업협력 양쪽의 관점에서 기업을 이해하고, 성장 가능성을 판단하며 실제 성장 과정에 기여하는 커리어를 만들어가고 있습니다.",
+    "투자와 사업협력 양쪽의 관점에서 기업을 이해하고, 성장 가능성을 판단할 수 있는 투자자로 전문성을 확장하고 있습니다.",
   ],
   education: [
     {

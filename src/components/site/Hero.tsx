@@ -106,7 +106,7 @@ export function Hero() {
             </span>
             으로 커리어를 시작해,
             <br />
-            현재는 대기업과 스타트업의 협업을 만드는{" "}
+            현재는 대기업과 스타트업을 연결하는{" "}
             <span className="inline-block bg-background px-2 py-1 text-foreground">
               오픈이노베이션
             </span>{" "}
