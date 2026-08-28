@@ -2,6 +2,13 @@ import { motion } from "motion/react";
 
 import { EXPERIENCE } from "@/lib/portfolio-data";
 import { SectionLabel } from "./SectionLabel";
+import ynaLogo from "@/assets/yna-logo.png.asset.json";
+import markLogo from "@/assets/mark-logo.png.asset.json";
+
+const LOGOS: Record<string, string> = {
+  와이앤아처: ynaLogo.url,
+  마크앤컴퍼니: markLogo.url,
+};
 
 export function Experience() {
   return (
