@@ -65,15 +65,22 @@ export function Frame() {
           className="dot-hit pointer-events-auto p-2 font-sans text-base font-bold uppercase"
           style={{ fontVariationSettings: '"wght" 800, "wdth" 118' }}
         >
-          Hayoung.Design
+          Son Hayoung
         </a>
         <nav className="pointer-events-auto flex items-center gap-x-1 lg:gap-x-3">
-          <button type="button" onClick={() => scrollTo("work")} className="dot-hit meta cursor-pointer p-2">
-            Work
-          </button>
-          <button type="button" onClick={() => scrollTo("contact")} className="dot-hit meta cursor-pointer p-2">
-            Contact
-          </button>
+          {NAV.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => scrollTo(item.id)}
+              className="dot-hit meta hidden cursor-pointer p-2 sm:block"
+            >
+              {item.label}
+            </button>
+          ))}
+          <a href={RESUME_HREF} className="dot-hit meta p-2">
+            Resume ↗
+          </a>
           <button
             type="button"
             onClick={() => setDark((v) => !v)}
