@@ -41,12 +41,15 @@ export function OpenInnovation() {
                 <h3 className="tight-display mt-3 text-[13vw] leading-[0.86] lg:text-[4.8vw]">
                   {p.program}
                 </h3>
-                <div className="meta mt-4">
-                  <span className="opacity-60">모집 분야</span>
-                  <span className="ml-2 inline-block bg-secondary px-2 py-1">
-                    {p.recruitment.join(" · ")}
-                  </span>
-                </div>
+
+                {p.recruitment.length > 0 && (
+                  <div className="meta mt-4">
+                    <span className="opacity-60">모집 분야</span>
+                    <span className="ml-2 inline-block bg-secondary px-2 py-1">
+                      {p.recruitment.join(" · ")}
+                    </span>
+                  </div>
+                )}
 
                 {p.counts.length > 0 && (
                   <div className="tight-display mt-8 text-[7vw] leading-tight lg:text-[1.9vw]">
@@ -62,6 +65,24 @@ export function OpenInnovation() {
 
               <div className="lg:col-span-6 lg:col-start-7">
                 <p className="text-2xl font-medium leading-[1.3] tracking-tight text-foreground lg:text-3xl">{p.message}</p>
+
+                {"workstreams" in p && p.workstreams && p.workstreams.length > 0 && (
+                  <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                    {p.workstreams.map((ws) => (
+                      <div key={ws.title}>
+                        <p className="meta text-sm opacity-60">{ws.title}</p>
+                        <StatBig
+                          value={ws.stat.value}
+                          label={ws.stat.label}
+                          className="mt-2 text-[14vw] lg:text-[4vw]"
+                        />
+                        <p className="mt-3 text-base leading-snug text-foreground/80">
+                          {ws.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {p.highlight && (
                   <p className="tight-display mt-8 text-[8vw] leading-[0.95] lg:text-[2.8vw]">
@@ -92,7 +113,7 @@ export function OpenInnovation() {
                         </span>
                       ))}
                     </div>
-                    <p className="meta mt-3 opacity-60">{p.funnel.labels.join(" → ")}</p>
+                    <p className="meta mt-3 opacity-60">{p.funnel.labels.join(" · ")}</p>
                   </div>
                 )}
 
@@ -115,6 +136,13 @@ export function OpenInnovation() {
                       </li>
                     ))}
                   </ul>
+                )}
+
+                {p.role && (
+                  <div className="mt-8">
+                    <span className="meta opacity-60">주요 역할</span>
+                    <p className="mt-1 text-base font-medium text-foreground">{p.role}</p>
+                  </div>
                 )}
 
                 {p.tags.length > 0 && (
