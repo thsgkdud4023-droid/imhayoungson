@@ -1,34 +1,33 @@
-import { motion } from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
 
 import { CONTACT } from "@/lib/portfolio-data";
 import arrowBlue from "@/assets/obj-arrow-blue.png";
 
 export function Contact() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const p = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
+
+  const y = useTransform(p, [0, 1], ["22%", "-22%"]);
+  const scale = useTransform(p, [0, 0.5, 1], [0.72, 1.06, 1.24]);
+  const rotate = useTransform(p, [0, 1], [-14, 8]);
+
   return (
     <section
       id="contact"
+      ref={ref}
       className="relative mt-[18vh] flex min-h-[92svh] flex-col overflow-hidden px-4 pb-[8vh] pt-[10vh] lg:px-14"
     >
-      {/* single glossy object, slow float behind the type */}
+      {/* scroll-driven glossy object behind the type */}
       <motion.div
         aria-hidden
-        initial={{ opacity: 0, y: 80, rotate: -8 }}
-        whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-        viewport={{ once: true, margin: "-15%" }}
-        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-[70vw] max-w-[720px] -translate-x-1/2 -translate-y-1/2"
+        style={{ y, scale, rotate }}
+        className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-[70vw] max-w-[720px] -translate-x-1/2 -translate-y-1/2 will-change-transform"
       >
-        <motion.img
-          src={arrowBlue}
-          alt=""
-          loading="lazy"
-          width={1024}
-          height={1024}
-          animate={{ y: [0, -24, 0], rotate: [0, 2, 0] }}
-          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-          className="w-full select-none"
-        />
+        <img src={arrowBlue} alt="" loading="lazy" width={1024} height={1024} className="w-full select-none" />
       </motion.div>
+
 
       <div className="meta relative z-10 flex items-center gap-3">
         <span className="inline-block h-2 w-6 bg-lime" />
