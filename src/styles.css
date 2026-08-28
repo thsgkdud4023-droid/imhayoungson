@@ -11,8 +11,9 @@
  */
 
 @theme inline {
-  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Archivo", "Pretendard Variable", Pretendard, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Pretendard Variable", Pretendard, ui-monospace, monospace;
+
 
   --radius-sm: 0px;
   --radius-md: 0px;
