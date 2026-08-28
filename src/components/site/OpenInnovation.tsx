@@ -88,7 +88,7 @@ export function OpenInnovation() {
                       {p.funnel.steps.map((s, i) => (
                         <span key={s} className="flex items-baseline gap-4">
                           {s}
-                          {i < p.funnel.steps.length - 1 && <span className="opacity-30">→</span>}
+                          {i < (p.funnel?.steps.length ?? 0) - 1 && <span className="opacity-30">→</span>}
                         </span>
                       ))}
                     </div>
