@@ -22,7 +22,7 @@ export function About() {
               key={p.slice(0, 12)}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
+              viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.85, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="mt-6 text-lg leading-relaxed text-foreground/85 first:mt-0"
             >

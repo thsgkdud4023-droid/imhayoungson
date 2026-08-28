@@ -56,7 +56,7 @@ export function Investment() {
             key={b.no}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
+            viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="grid grid-cols-1 gap-8 border-b border-foreground/15 py-[5.5vh] lg:grid-cols-12"
           >

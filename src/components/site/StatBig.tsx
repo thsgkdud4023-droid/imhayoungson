@@ -11,7 +11,7 @@ type Props = {
 /** Big display number that counts up when it scrolls into view. */
 export function StatBig({ value, label, className = "", labelClassName = "" }: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-12%" });
+  const inView = useInView(ref, { once: true, amount: 0.15 });
   const [n, setN] = useState(0);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export function StatBig({ value, label, className = "", labelClassName = "" }: P
       ref={ref}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className={`tight-display tabular-nums leading-[0.85] ${className}`}>{n}</div>

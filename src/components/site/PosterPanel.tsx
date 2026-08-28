@@ -21,7 +21,7 @@ export function PosterPanel({ id, caption }: { id: string; caption?: string }) {
       <motion.figure
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-10%" }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="lg:sticky lg:top-[16vh]"
       >

@@ -40,7 +40,7 @@ export function SplitText({
   };
 
   const animateProps = onScroll
-    ? { whileInView: "show" as const, viewport: { once: true, margin: "-12%" } }
+    ? { whileInView: "show" as const, viewport: { once: true, amount: 0.15 } }
     : { animate: ready ? ("show" as const) : ("hidden" as const) };
 
   return (

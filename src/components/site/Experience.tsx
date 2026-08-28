@@ -21,7 +21,7 @@ export function Experience() {
             key={e.company}
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
+            viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.85, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
             className="border-t border-foreground/25 pt-5 lg:col-span-5"
           >
@@ -68,7 +68,7 @@ export function Experience() {
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-10%" }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="mt-[8vh] max-w-4xl border-t border-foreground/20 pt-6 text-xl leading-[1.45] tracking-tight lg:text-[1.9vw]"
       >
