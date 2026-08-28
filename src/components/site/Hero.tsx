@@ -13,10 +13,10 @@ import objRocket from "@/assets/obj-rocket.png";
 import objHandshake from "@/assets/obj-handshake.png";
 
 const STICKERS = [
-  { src: objCoins, className: "left-[6%] top-[18%] w-[15vw] max-w-[160px]", depth: 34, rotate: -10 },
-  { src: objChart, className: "right-[9%] top-[22%] w-[14vw] max-w-[150px]", depth: -26, rotate: 7 },
-  { src: objRocket, className: "left-[21%] bottom-[26%] w-[14vw] max-w-[150px]", depth: 20, rotate: -6 },
-  { src: objHandshake, className: "right-[19%] bottom-[30%] w-[12vw] max-w-[130px]", depth: -18, rotate: 12 },
+  { src: objCoins, className: "left-[6%] top-[18%] w-[12vw] max-w-[130px]", depth: 28, rotate: -10 },
+  { src: objChart, className: "right-[9%] top-[22%] w-[11vw] max-w-[120px]", depth: -22, rotate: 7 },
+  { src: objRocket, className: "left-[21%] bottom-[26%] w-[11vw] max-w-[120px]", depth: 16, rotate: -6 },
+  { src: objHandshake, className: "right-[19%] bottom-[30%] w-[10vw] max-w-[110px]", depth: -14, rotate: 12 },
 ];
 
 
@@ -44,15 +44,15 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="sky-stage relative flex min-h-[100svh] flex-col overflow-hidden px-4 pb-10 pt-[20vh] lg:px-14"
+      className="sky-stage relative flex min-h-[100svh] flex-col overflow-hidden px-4 pb-10 pt-[22vh] lg:px-14"
     >
       {/* 3D lettering + sticker collage */}
       <motion.div aria-hidden className="pointer-events-none absolute inset-0" style={{ opacity: fade }}>
         <motion.img
           src={hello3d}
           alt=""
-          className="absolute left-1/2 top-1/2 w-[92vw] max-w-[1400px] -translate-x-1/2 -translate-y-1/2 select-none opacity-90 mix-blend-luminosity"
-          style={{ y: lettersY, scale: lettersScale, x: pointer.x * -20 }}
+          className="absolute left-1/2 top-1/2 w-[68vw] max-w-[1020px] -translate-x-1/2 -translate-y-1/2 select-none opacity-55 mix-blend-luminosity"
+          style={{ y: lettersY, scale: lettersScale, x: pointer.x * -12 }}
         />
         {STICKERS.map((s, i) => (
           <motion.img
@@ -68,7 +68,7 @@ export function Hero() {
       </motion.div>
 
       <div className="relative z-10 flex flex-1 flex-col text-foreground">
-        <h1 className="tight-display text-[11vw] leading-[0.9] lg:text-[6.4vw]">
+        <h1 className="tight-display text-[8.8vw] leading-[0.93] lg:text-[5vw]">
           {HERO.titleLines.map((line, i) => (
             <SplitText key={line} as="div" text={line} delay={0.25 + i * 0.08} />
           ))}
@@ -78,34 +78,34 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={ready ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 max-w-2xl"
+          className="mt-5 max-w-lg"
         >
           {HERO.ko.map((line) => (
-            <p key={line} className="text-base leading-relaxed opacity-80 lg:text-lg">
+            <p key={line} className="text-[14px] leading-relaxed opacity-70 lg:text-[15px]">
               {line}
             </p>
           ))}
-          <p className="meta mt-6 opacity-60">{HERO.kicker}</p>
+          <p className="meta mt-4 opacity-50">{HERO.kicker}</p>
         </motion.div>
 
-        <div className="mt-[12vh] grid grid-cols-1 items-end gap-y-10 border-t border-current/20 pt-8 lg:mt-auto lg:grid-cols-12 lg:gap-x-8">
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 lg:col-span-7">
+        <div className="mt-[9vh] grid grid-cols-1 items-end gap-y-7 border-t border-current/15 pt-6 lg:mt-auto lg:grid-cols-12 lg:gap-x-8">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-7 lg:col-span-7">
             {HERO.primaryStats.map((s) => (
               <StatBig
                 key={s.label}
                 value={s.value}
                 label={s.label}
-                className="text-[22vw] lg:text-[6.6vw]"
+                className="text-[16vw] lg:text-[4.8vw]"
               />
             ))}
           </div>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-6 lg:col-span-4 lg:col-start-9">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-4 lg:col-span-4 lg:col-start-9">
             {HERO.secondaryStats.map((s) => (
               <StatBig
                 key={s.label}
                 value={s.value}
                 label={s.label}
-                className="text-[9vw] opacity-70 lg:text-[2.2vw]"
+                className="text-[6.8vw] opacity-60 lg:text-[1.7vw]"
                 labelClassName="opacity-50"
               />
             ))}
