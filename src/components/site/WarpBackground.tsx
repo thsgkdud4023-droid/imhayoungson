@@ -39,7 +39,7 @@ export function WarpBackground({ density = 1, rings = false, className = "" }: P
     let raf = 0;
     let running = true;
 
-    const count = Math.round((mobile ? 320 : 900) * density);
+    const count = Math.round((mobile ? 420 : 1400) * density);
     const streaks: Streak[] = [];
     const squares = Array.from({ length: mobile ? 10 : 22 }, () => ({
       x: Math.random(),
@@ -99,7 +99,7 @@ export function WarpBackground({ density = 1, rings = false, className = "" }: P
 
       const ox = cx * w;
       const oy = cy * h;
-      const speed = (0.0075 + boost * 0.006) * (reduced ? 0 : 1);
+      const speed = (0.011 + boost * 0.008) * (reduced ? 0 : 1);
       const focal = Math.max(w, h) * 0.7;
 
       ctx.fillStyle = "hsl(0 0% 4%)";

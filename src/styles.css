@@ -223,3 +223,8 @@
   mix-blend-mode: difference;
   color: oklch(1 0 0);
 }
+
+.hud-invert *,
+.hud-invert *:hover {
+  color: oklch(1 0 0) !important;
+}
