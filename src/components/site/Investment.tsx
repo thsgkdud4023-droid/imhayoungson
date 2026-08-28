@@ -68,16 +68,14 @@ export function Investment() {
               {b.stats.length > 0 && (
                 <div className="mt-6 flex flex-wrap gap-x-12 gap-y-6">
                   {b.stats.map((s) => (
-                    <div key={s.label} className="flex items-baseline gap-2">
-                      <StatBig
-                        value={s.value}
-                        label={s.label}
-                        className="text-[18vw] lg:text-[6.4vw]"
-                      />
-                      <span className="tight-display text-[6vw] leading-none lg:text-[2vw]">
-                        {s.unit}
-                      </span>
-                    </div>
+                    <StatBig
+                      key={s.label}
+                      value={s.value}
+                      label={s.label}
+                      unit={s.unit}
+                      className="text-[18vw] lg:text-[6.4vw]"
+                      unitClassName="text-[6vw] lg:text-[2vw]"
+                    />
                   ))}
                 </div>
               )}
