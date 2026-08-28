@@ -7,16 +7,18 @@ import { useReveal } from "./reveal";
 import { StatBig } from "./StatBig";
 
 import hello3d from "@/assets/hello-3d.png";
-import stickerHearts from "@/assets/sticker-hearts.png";
-import stickerHand from "@/assets/sticker-hand.png";
-import stickerSquiggle from "@/assets/sticker-squiggle.png";
+import objCoins from "@/assets/obj-coins.png";
+import objChart from "@/assets/obj-chart.png";
+import objRocket from "@/assets/obj-rocket.png";
+import objHandshake from "@/assets/obj-handshake.png";
 
 const STICKERS = [
-  { src: stickerHearts, className: "left-[6%] top-[18%] w-[16vw] max-w-[170px]", depth: 34, rotate: -12 },
-  { src: stickerHand, className: "right-[9%] top-[24%] w-[13vw] max-w-[140px]", depth: -26, rotate: 9 },
-  { src: stickerSquiggle, className: "left-[22%] bottom-[26%] w-[15vw] max-w-[160px]", depth: 20, rotate: 6 },
-  { src: stickerHearts, className: "right-[20%] bottom-[30%] w-[10vw] max-w-[110px]", depth: -18, rotate: 16 },
+  { src: objCoins, className: "left-[6%] top-[18%] w-[15vw] max-w-[160px]", depth: 34, rotate: -10 },
+  { src: objChart, className: "right-[9%] top-[22%] w-[14vw] max-w-[150px]", depth: -26, rotate: 7 },
+  { src: objRocket, className: "left-[21%] bottom-[26%] w-[14vw] max-w-[150px]", depth: 20, rotate: -6 },
+  { src: objHandshake, className: "right-[19%] bottom-[30%] w-[12vw] max-w-[130px]", depth: -18, rotate: 12 },
 ];
+
 
 export function Hero() {
   const ready = useReveal();
