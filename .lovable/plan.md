@@ -66,3 +66,20 @@ About 하단 얇은 3열 미니 블록(명지대 / Université Catholique de Lil
 - 신규 공용 컴포넌트: `SectionLabel`, `StatBig`(카운트업), `FlowRail`(스티키 프로세스), `OIBlock`.
 - 기존 Preloader / Cursor / SmoothScroll / GridLines / SplitText / sky-stage는 그대로 사용.
 - `head()` 타이틀·디스크립션을 손하영 투자/오픈이노베이션 포트폴리오로 갱신.
+
+## 추가: 레퍼런스의 "워프(하이퍼스페이스)" 배경 — 구현 가능
+
+첨부하신 두 화면(검은 배경 + 중심에서 방사되는 네온 라인 + 라임 사각 파티클 + 노란 타원 링)은 캔버스 애니메이션이라 그대로 구현 가능합니다. 외부 3D 라이브러리 없이 `<canvas>` 2D + requestAnimationFrame으로 만듭니다.
+
+- 중심점에서 랜덤 각도·속도로 스트릭 생성 → 바깥으로 가속하며 길이가 늘어남(원근 z 시뮬레이션), 화면 밖이면 재활용.
+- 색은 디자인 토큰만 사용(시안·블루·바이올렛·핑크·라임), 라임 사각 파티클은 별도 레이어.
+- 두 번째 화면의 노란 동심 타원 링은 스크롤 진행도에 따라 확장되는 오버레이(터널 코어).
+- 마우스 위치로 소실점이 부드럽게 따라가고, 스크롤 속도에 비례해 워프 속도가 빨라짐.
+- `prefers-reduced-motion`이면 애니메이션 정지 + 정적 프레임, 모바일은 스트릭 수를 줄여 성능 확보.
+
+### 사이트 어디에 쓸지
+
+- HERO를 이 다크 워프 배경으로 전환하고, 그 위에 흰색 대형 타이포 `Investment, with an Operator's Perspective.` + 하단 4개 숫자 스트립.
+- 두 번째 화면처럼 화면 사방에 짧은 문장을 흩뿌리는 연출은 BRIDGE 섹션에서 사용(`Then I moved closer to how startups actually grow.` + 국문 1줄 + 키워드 3~4개 분산 배치).
+- 나머지 본문(INVESTMENT/OI/EXPERIENCE)은 페이퍼 화이트 유지 → 다크 워프가 시작·전환·마지막에만 등장하는 리듬.
+- CONTACT는 하늘색 스테이지 대신 워프로 마무리할 수도 있음(둘 중 선택).
