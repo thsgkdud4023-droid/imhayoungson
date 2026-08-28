@@ -4,6 +4,7 @@ import { OPEN_INNOVATION } from "@/lib/portfolio-data";
 import { SectionLabel } from "./SectionLabel";
 import { SplitText } from "./SplitText";
 import { StatBig } from "./StatBig";
+import { PosterSliver } from "./PosterSliver";
 
 export function OpenInnovation() {
   return (
@@ -30,8 +31,9 @@ export function OpenInnovation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-8%" }}
             transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
-            className="border-t border-foreground/20 py-[7vh]"
+            className="relative border-t border-foreground/20 py-[7vh] lg:pr-[9rem] xl:pr-[11rem]"
           >
+            <PosterSliver id={p.id} caption={`${p.client} · ${p.program}`} />
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <p className="meta opacity-60">{p.client}</p>
