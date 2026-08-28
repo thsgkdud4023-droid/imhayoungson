@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { NAV, RESUME_HREF } from "@/lib/portfolio-data";
 import { useReveal } from "./reveal";
 
 function useClock() {
