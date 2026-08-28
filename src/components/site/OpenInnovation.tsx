@@ -121,9 +121,21 @@ export function OpenInnovation() {
 
       <div className="border-t border-foreground/20 pt-4">
         <p className="meta opacity-60">Other Selected Programs</p>
-        <p className="meta mt-2 text-muted-foreground">
-          {OPEN_INNOVATION.otherPrograms.join(" · ")}
-        </p>
+        <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
+          {OPEN_INNOVATION.otherPrograms.map((p, i) => (
+            <motion.div
+              key={p.org}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.7, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+              className="border border-foreground/15 p-4 transition-colors hover:bg-secondary"
+            >
+              <p className="text-base font-semibold tracking-tight">{p.org}</p>
+              <p className="meta mt-1 text-sm text-muted-foreground">{p.program}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
