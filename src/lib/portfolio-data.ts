@@ -108,7 +108,11 @@ export const INVESTMENT = {
       stats: [],
       headline: [],
       body: "피투자기업의 주요 현황을 모니터링하고 투자 이후 사후관리 및 조합 보고 업무를 수행했습니다.",
-      bullets: [],
+      bullets: [
+        "피투자기업 주요 현황 및 경영정보 모니터링",
+        "쿼타북 기반 투자기업 정보 관리",
+        "조합 보고 및 투자 이후 사후관리",
+      ],
       process: [],
       tags: ["포트폴리오 모니터링", "KIIPS", "조합 보고", "후속관리"],
     },
@@ -188,7 +192,7 @@ export const OPEN_INNOVATION = {
       category: "Commerce · AI · Product · Platform",
       recruitment: ["커머스", "AI", "상품", "플랫폼"],
       message:
-        "정규 모집 운영뿐 아니라 신규 현업 기술수요가 발생했을 때 적합한 기술기업을 직접 탐색·추천하는 타깃 소싱을 수행했습니다.",
+        "From open call to targeted sourcing — 정규 모집 운영뿐 아니라 신규 현업 기술수요가 발생했을 때 적합한 기술기업을 직접 탐색·추천하는 타깃 소싱을 수행했습니다.",
       counts: [],
       funnel: null,
       stats: [],
@@ -198,7 +202,7 @@ export const OPEN_INNOVATION = {
         "신규 기술수요 발생 시 적합 스타트업 직접 소싱·추천",
       ],
       tags: [],
-      highlight: "From open call to targeted sourcing.",
+      highlight: "",
     },
   ],
   otherPrograms: [
