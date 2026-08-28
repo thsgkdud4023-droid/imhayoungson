@@ -61,6 +61,30 @@ export function OpenInnovation() {
                     ))}
                   </div>
                 )}
+
+                {POSTERS[p.id] && (
+                  <motion.figure
+                    initial={{ opacity: 0, y: 28, rotate: -1.5 }}
+                    whileInView={{ opacity: 1, y: 0, rotate: -1.5 }}
+                    whileHover={{ rotate: 0, y: -6, scale: 1.015 }}
+                    viewport={{ once: true, margin: "-10%" }}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="group relative mt-10 max-w-[320px] border border-foreground/25 bg-secondary p-2 shadow-[8px_8px_0_0_hsl(var(--foreground)/0.12)]"
+                  >
+                    <div className="overflow-hidden">
+                      <img
+                        src={POSTERS[p.id]}
+                        alt={`${p.client} ${p.program} 프로그램 포스터`}
+                        loading="lazy"
+                        className="w-full object-cover grayscale transition-[filter,transform] duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
+                      />
+                    </div>
+                    <figcaption className="meta mt-2 flex items-center justify-between text-[10px] opacity-60">
+                      <span>OFFICIAL POSTER</span>
+                      <span>{p.client}</span>
+                    </figcaption>
+                  </motion.figure>
+                )}
               </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
