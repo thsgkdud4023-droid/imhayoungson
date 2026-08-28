@@ -4,16 +4,16 @@ import { OPEN_INNOVATION } from "@/lib/portfolio-data";
 import { SectionLabel } from "./SectionLabel";
 import { SplitText } from "./SplitText";
 import { StatBig } from "./StatBig";
-import posterIbk from "@/assets/poster-ibk.png.asset.json";
-import posterWelstory from "@/assets/poster-welstory.png.asset.json";
-import posterZero1ne from "@/assets/poster-zero1ne.png.asset.json";
-import posterHigh from "@/assets/poster-high.png.asset.json";
+import lockupIbk from "@/assets/lockup-ibk.png.asset.json";
+import lockupWelstory from "@/assets/lockup-welstory.png.asset.json";
+import lockupZero1ne from "@/assets/lockup-zero1ne.png.asset.json";
+import lockupHigh from "@/assets/lockup-high.png.asset.json";
 
-const POSTERS: Record<string, string> = {
-  ibk: posterIbk.url,
-  welstory: posterWelstory.url,
-  zero1ne: posterZero1ne.url,
-  high: posterHigh.url,
+const LOCKUPS: Record<string, string> = {
+  ibk: lockupIbk.url,
+  welstory: lockupWelstory.url,
+  zero1ne: lockupZero1ne.url,
+  high: lockupHigh.url,
 };
 
 export function OpenInnovation() {
@@ -46,8 +46,22 @@ export function OpenInnovation() {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <p className="meta opacity-60">{p.client}</p>
-                <h3 className="tight-display mt-3 text-[13vw] leading-[0.86] lg:text-[4.8vw]">
-                  {p.program}
+                <h3 className="mt-3">
+                  {LOCKUPS[p.id] ? (
+                    <span className="block w-fit max-w-full overflow-hidden border border-foreground/25">
+                      <img
+                        src={LOCKUPS[p.id]}
+                        alt={`${p.client} ${p.program}`}
+                        loading="lazy"
+                        className="block h-auto w-full max-w-[420px] object-contain transition-transform duration-700 hover:scale-[1.02]"
+                      />
+                    </span>
+                  ) : (
+                    <span className="tight-display block text-[13vw] leading-[0.86] lg:text-[4.8vw]">
+                      {p.program}
+                    </span>
+                  )}
+                  <span className="sr-only">{p.program}</span>
                 </h3>
                 <p className="meta mt-4 inline-block bg-secondary px-2 py-1">{p.category}</p>
 
@@ -62,29 +76,6 @@ export function OpenInnovation() {
                   </div>
                 )}
 
-                {POSTERS[p.id] && (
-                  <motion.figure
-                    initial={{ opacity: 0, y: 28, rotate: -1.5 }}
-                    whileInView={{ opacity: 1, y: 0, rotate: -1.5 }}
-                    whileHover={{ rotate: 0, y: -6, scale: 1.015 }}
-                    viewport={{ once: true, margin: "-10%" }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="group relative mt-10 max-w-[320px] border border-foreground/25 bg-secondary p-2 shadow-[8px_8px_0_0_hsl(var(--foreground)/0.12)]"
-                  >
-                    <div className="overflow-hidden">
-                      <img
-                        src={POSTERS[p.id]}
-                        alt={`${p.client} ${p.program} 프로그램 포스터`}
-                        loading="lazy"
-                        className="w-full object-cover grayscale transition-[filter,transform] duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
-                      />
-                    </div>
-                    <figcaption className="meta mt-2 flex items-center justify-between text-[10px] opacity-60">
-                      <span>OFFICIAL POSTER</span>
-                      <span>{p.client}</span>
-                    </figcaption>
-                  </motion.figure>
-                )}
               </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
