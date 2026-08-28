@@ -78,6 +78,7 @@ export function Hero() {
                 src={s.src}
                 alt=""
                 className="w-full select-none drop-shadow-xl will-change-transform"
+                style={{ opacity: s.opacity }}
                 animate={{ x: pointer.x * s.depth, y: pointer.y * s.depth }}
                 transition={{ type: "spring", stiffness: 60, damping: 18 }}
               />
