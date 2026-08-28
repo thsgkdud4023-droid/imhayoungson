@@ -42,11 +42,11 @@ export function Investment() {
         ))}
       </h2>
 
-      <div className="mt-8 max-w-3xl text-xl leading-relaxed text-foreground/85 lg:text-2xl">
-        {INVESTMENT.ko.map((line) => (
-          <p key={line}>{line}</p>
-        ))}
-      </div>
+      <p className="ko-text mt-8 max-w-3xl text-xl leading-relaxed text-foreground/85 lg:whitespace-nowrap lg:text-2xl">
+        {INVESTMENT.ko[0]}
+        <br />
+        {INVESTMENT.ko[1]}
+      </p>
 
       <FlowRail />
 

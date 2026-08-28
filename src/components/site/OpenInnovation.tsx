@@ -17,11 +17,11 @@ export function OpenInnovation() {
         ))}
       </h2>
 
-      <div className="mt-8 max-w-3xl text-lg leading-relaxed text-foreground/85">
-        {OPEN_INNOVATION.ko.map((line) => (
-          <p key={line}>{line}</p>
-        ))}
-      </div>
+      <p className="ko-text mt-8 max-w-3xl text-lg leading-relaxed text-foreground/85 lg:whitespace-nowrap">
+        {OPEN_INNOVATION.ko[0]}
+        <br />
+        {OPEN_INNOVATION.ko[1]}
+      </p>
 
       <div className="mt-[10vh]">
         {OPEN_INNOVATION.projects.map((p) => (
