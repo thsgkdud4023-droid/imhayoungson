@@ -4,6 +4,17 @@ import { OPEN_INNOVATION } from "@/lib/portfolio-data";
 import { SectionLabel } from "./SectionLabel";
 import { SplitText } from "./SplitText";
 import { StatBig } from "./StatBig";
+import posterIbk from "@/assets/poster-ibk.png.asset.json";
+import posterWelstory from "@/assets/poster-welstory.png.asset.json";
+import posterZero1ne from "@/assets/poster-zero1ne.png.asset.json";
+import posterHigh from "@/assets/poster-high.png.asset.json";
+
+const POSTERS: Record<string, string> = {
+  ibk: posterIbk.url,
+  welstory: posterWelstory.url,
+  zero1ne: posterZero1ne.url,
+  high: posterHigh.url,
+};
 
 export function OpenInnovation() {
   return (
