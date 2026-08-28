@@ -34,6 +34,7 @@ export function OpenInnovation() {
             className="relative border-t border-foreground/20 py-[7vh]"
           >
             <div className="flex flex-col gap-10 lg:flex-row lg:gap-14">
+            <PosterPanel id={p.id} caption={`${p.client} · ${p.program}`} />
             <div className="min-w-0 flex-1 grid grid-cols-1 gap-8 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <p className="meta opacity-60">{p.client}</p>
@@ -122,7 +123,6 @@ export function OpenInnovation() {
                 )}
               </div>
             </div>
-            <PosterPanel id={p.id} caption={`${p.client} · ${p.program}`} />
             </div>
           </motion.article>
         ))}

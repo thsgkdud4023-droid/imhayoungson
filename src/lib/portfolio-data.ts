@@ -11,10 +11,7 @@ export const RESUME_HREF = "#contact";
 
 export const HERO = {
   titleLines: ["Investment,", "with an Operator's", "Perspective."],
-  ko: [
-    "투자 검토와 집행으로 커리어를 시작해,",
-    "현재는 대기업과 스타트업의 협업을 만드는 오픈이노베이션 업무를 수행하고 있습니다.",
-  ],
+  ko: "투자 검토와 집행으로 커리어를 시작해, 현재는 대기업과 스타트업의 협업을 만드는 오픈이노베이션 업무를 수행하고 있습니다.",
   kicker: "Investment · Fund Operations · Portfolio · Open Innovation",
   primaryStats: [
     { value: 27, label: "투자집행 기업" },
@@ -136,10 +133,7 @@ export const OPEN_INNOVATION = {
       category: "FinTech · AI · Data · Financial Operations",
       message:
         "금융 현업의 수시 과제를 스타트업과 구체화하고, PoC 계획 수립부터 실행 과정까지 현업-기업 간 협업을 조율했습니다.",
-      counts: [
-        { value: 7, label: "Regular" },
-        { value: 2, label: "On-demand" },
-      ],
+      counts: [],
       funnel: { steps: ["12", "3", "1"], labels: ["지원", "발표평가", "최종선정"] },
       stats: [],
       flow: ["Needs Discovery", "Sourcing", "Selection", "PoC"],
@@ -231,7 +225,7 @@ export const ABOUT = {
 };
 
 export const CONTACT = {
-  lines: ["Let's talk about", "startups and investment."],
+  lines: ["Exploring what’s next", "in investment."],
   links: [
     { label: "Email", value: "thsgkdud4023@naver.com", href: "mailto:thsgkdud4023@naver.com" },
   ],
