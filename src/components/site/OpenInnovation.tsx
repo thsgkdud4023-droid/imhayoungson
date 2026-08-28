@@ -4,16 +4,16 @@ import { OPEN_INNOVATION } from "@/lib/portfolio-data";
 import { SectionLabel } from "./SectionLabel";
 import { SplitText } from "./SplitText";
 import { StatBig } from "./StatBig";
-import posterIbk from "@/assets/poster-ibk.png.asset.json";
-import posterWelstory from "@/assets/poster-welstory.png.asset.json";
-import posterZero1ne from "@/assets/poster-zero1ne.png.asset.json";
-import posterHigh from "@/assets/poster-high.png.asset.json";
+import lockupIbk from "@/assets/lockup-ibk.png.asset.json";
+import lockupWelstory from "@/assets/lockup-welstory.png.asset.json";
+import lockupZero1ne from "@/assets/lockup-zero1ne.png.asset.json";
+import lockupHigh from "@/assets/lockup-high.png.asset.json";
 
-const POSTERS: Record<string, string> = {
-  ibk: posterIbk.url,
-  welstory: posterWelstory.url,
-  zero1ne: posterZero1ne.url,
-  high: posterHigh.url,
+const LOCKUPS: Record<string, string> = {
+  ibk: lockupIbk.url,
+  welstory: lockupWelstory.url,
+  zero1ne: lockupZero1ne.url,
+  high: lockupHigh.url,
 };
 
 export function OpenInnovation() {
