@@ -174,9 +174,9 @@ export const OPEN_INNOVATION = {
     },
   ],
   otherPrograms: [
-    "CJ CheilJedang Frontier Labs",
-    "Samsung Securities C-Lab Outside",
-    "Korea Tourism Organization Tourism Plus Tech",
+    { org: "CJ제일제당", program: "Frontier Labs" },
+    { org: "삼성증권", program: "C-Lab Outside" },
+    { org: "한국관광공사", program: "관광플러스테크" },
   ],
 };
 
