@@ -7,10 +7,10 @@ import { SplitText } from "./SplitText";
 export function About() {
   return (
     <section id="about" className="relative px-4 pt-[22vh] lg:px-14">
-      <SectionLabel no="05" title="ABOUT" />
+      <SectionLabel no="04" title="ABOUT" />
 
       <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-12">
-        <h2 className="tight-display text-[10vw] leading-[0.9] lg:col-span-6 lg:text-[4.4vw]">
+        <h2 className="tight-display text-[9vw] leading-[0.95] lg:col-span-6 lg:text-[3.6vw]">
           {ABOUT.headline.map((line, i) => (
             <SplitText key={line} as="div" onScroll text={line} delay={i * 0.06} />
           ))}
@@ -32,17 +32,20 @@ export function About() {
         </div>
       </div>
 
-      <div className="mt-[12vh] grid grid-cols-1 gap-8 border-t border-foreground/20 pt-4 sm:grid-cols-3">
-        {ABOUT.education.map((e) => (
-          <div key={e.title}>
-            <p className="meta">{e.title}</p>
-            {e.lines.map((l) => (
-              <p key={l} className="meta mt-1 text-muted-foreground">
-                {l}
-              </p>
-            ))}
-          </div>
-        ))}
+      <div className="mt-[12vh] border-t border-foreground/20 pt-4">
+        <p className="meta opacity-60">Education</p>
+        <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
+          {ABOUT.education.map((e) => (
+            <div key={e.title}>
+              <p className="text-base font-semibold tracking-tight">{e.title}</p>
+              {e.lines.map((l) => (
+                <p key={l} className="meta mt-1 text-xs text-muted-foreground">
+                  {l}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
