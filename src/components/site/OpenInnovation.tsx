@@ -10,7 +10,7 @@ export function OpenInnovation() {
     <section id="open-innovation" className="relative px-4 pt-[22vh] lg:px-14">
       <SectionLabel no="03" title="OPEN INNOVATION" />
 
-      <h2 className="tight-display mt-8 text-[10vw] leading-[0.9] lg:text-[5.4vw]">
+      <h2 className="tight-display mt-8 text-[10vw] leading-[0.9] lg:text-[4.6vw]">
         {OPEN_INNOVATION.headline.map((line, i) => (
           <SplitText key={line} as="div" onScroll text={line} delay={i * 0.06} />
         ))}
@@ -41,7 +41,7 @@ export function OpenInnovation() {
                 <p className="meta mt-4 inline-block bg-secondary px-2 py-1">{p.category}</p>
 
                 {p.counts.length > 0 && (
-                  <div className="tight-display mt-8 text-[8vw] leading-tight lg:text-[2.4vw]">
+                  <div className="tight-display mt-8 text-[7vw] leading-tight lg:text-[1.9vw]">
                     {p.counts.map((c, i) => (
                       <span key={c.label}>
                         {c.value} {c.label}

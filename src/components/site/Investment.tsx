@@ -36,7 +36,7 @@ export function Investment() {
     <section id="investment" className="relative px-4 pt-[22vh] lg:px-14">
       <SectionLabel no="02" title="INVESTMENT" />
 
-      <h2 className="tight-display mt-8 text-[10vw] leading-[0.9] lg:text-[5.4vw]">
+      <h2 className="tight-display mt-8 text-[10vw] leading-[0.9] lg:text-[4.6vw]">
         {INVESTMENT.headline.map((line, i) => (
           <SplitText key={line} as="div" onScroll text={line} delay={i * 0.06} />
         ))}
