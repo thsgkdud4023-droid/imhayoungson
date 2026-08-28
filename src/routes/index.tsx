@@ -10,10 +10,8 @@ import { GridLines } from "@/components/site/GridLines";
 import { Frame } from "@/components/site/Frame";
 import { Hero } from "@/components/site/Hero";
 import { Investment } from "@/components/site/Investment";
-import { Bridge } from "@/components/site/Bridge";
 import { OpenInnovation } from "@/components/site/OpenInnovation";
 import { Experience } from "@/components/site/Experience";
-import { Capabilities } from "@/components/site/Capabilities";
 import { About } from "@/components/site/About";
 import { Contact } from "@/components/site/Contact";
 
