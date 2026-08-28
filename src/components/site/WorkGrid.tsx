@@ -25,7 +25,7 @@ export function WorkGrid() {
             className="group lg:mb-20"
             style={
               isMobile
-                ? undefined
+                ? {}
                 : {
                     gridColumn: `${p.col[0]} / span ${p.col[1]}`,
                     gridRow: p.row,
