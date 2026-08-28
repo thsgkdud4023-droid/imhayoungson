@@ -9,10 +9,10 @@ export function WorkGrid() {
   return (
     <section id="work" className="relative mt-[24vh] px-4 lg:px-14">
       <h2 className="tight-display max-w-[16ch] text-[11vw] leading-[0.86] lg:text-[7vw]">
-        <SplitText as="div" onScroll text="I bring" />
-        <SplitText as="div" onScroll text="craft & taste" delay={0.06} />
-        <SplitText as="div" onScroll text="to digital work" delay={0.12} />
+        <SplitText as="div" onScroll text="Selected" />
+        <SplitText as="div" onScroll text="work" delay={0.06} />
       </h2>
+
 
       <div className="mt-[18vh] grid grid-cols-1 gap-x-6 gap-y-24 lg:grid-cols-12 lg:gap-y-0">
         {PROJECTS.map((p, i) => (
