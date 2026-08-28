@@ -11,9 +11,23 @@ const LOGOS: Record<string, string> = {
 };
 
 export function Experience() {
+  const [transitionFirst, transitionRest] = EXPERIENCE.transition.split(",", 2);
+
   return (
     <section id="experience" className="relative px-4 pt-[22vh] lg:px-14">
       <SectionLabel no="01" title="EXPERIENCE" />
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="mt-6 max-w-4xl text-xl leading-[1.45] tracking-tight lg:mt-8 lg:text-[1.9vw]"
+      >
+        {transitionFirst},
+        <br />
+        {transitionRest}
+      </motion.p>
 
       <div className="mt-[8vh] grid grid-cols-1 gap-y-12 lg:grid-cols-11 lg:gap-x-8">
         {EXPERIENCE.items.map((e, i) => (
@@ -65,15 +79,6 @@ export function Experience() {
         </div>
       </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-[8vh] max-w-4xl border-t border-foreground/20 pt-6 text-xl leading-[1.45] tracking-tight lg:text-[1.9vw]"
-      >
-        {EXPERIENCE.transition}
-      </motion.p>
     </section>
   );
 }
