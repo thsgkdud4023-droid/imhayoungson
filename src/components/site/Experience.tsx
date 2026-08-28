@@ -23,8 +23,13 @@ export function Experience() {
               <span>{e.track}</span>
             </div>
 
-            <h3 className="tight-display mt-6 text-[8.5vw] leading-[0.95] lg:text-[2.6vw]">
-              {e.company}
+            <h3 className="mt-6">
+              <img
+                src={LOGOS[e.company]}
+                alt={e.company}
+                className="h-10 w-auto object-contain lg:h-12"
+              />
+              <span className="sr-only">{e.company}</span>
             </h3>
             <p className="mt-3 text-base font-medium tracking-tight text-foreground lg:text-lg">
               {e.role}
