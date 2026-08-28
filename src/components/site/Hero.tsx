@@ -53,15 +53,26 @@ export function Hero() {
           style={{ y: lettersY, scale: lettersScale, x: pointer.x * -12 }}
         />
         {STICKERS.map((s, i) => (
-          <motion.img
+          <motion.div
             key={i}
-            src={s.src}
-            alt=""
-            className={`absolute select-none drop-shadow-xl ${s.className}`}
-            style={{ rotate: s.rotate }}
-            animate={{ x: pointer.x * s.depth, y: pointer.y * s.depth }}
-            transition={{ type: "spring", stiffness: 60, damping: 18 }}
-          />
+            className={`absolute ${s.className}`}
+            initial={{ y: "-120vh", opacity: 0, rotate: s.rotate - 18 }}
+            animate={{ y: 0, opacity: 1, rotate: s.rotate }}
+            transition={{
+              type: "spring",
+              stiffness: 38,
+              damping: 22,
+              delay: 0.35 + i * 0.18,
+            }}
+          >
+            <motion.img
+              src={s.src}
+              alt=""
+              className="w-full select-none drop-shadow-xl will-change-transform"
+              animate={{ x: pointer.x * s.depth, y: pointer.y * s.depth }}
+              transition={{ type: "spring", stiffness: 60, damping: 18 }}
+            />
+          </motion.div>
         ))}
       </motion.div>
 
