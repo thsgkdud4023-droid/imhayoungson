@@ -17,7 +17,7 @@ export function OpenInnovation() {
         ))}
       </h2>
 
-      <p className="ko-text mt-8 max-w-3xl text-lg leading-relaxed text-foreground/85 lg:whitespace-nowrap">
+      <p className="ko-text mt-8 text-lg leading-relaxed text-foreground/85 lg:whitespace-nowrap">
         {OPEN_INNOVATION.ko[0]}
         <br />
         {OPEN_INNOVATION.ko[1]}
