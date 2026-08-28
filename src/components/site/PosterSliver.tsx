@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 
 import posterIbk from "@/assets/poster-ibk.jpg";
 import posterWelstory from "@/assets/poster-welstory.jpg";
@@ -13,35 +12,34 @@ const POSTERS: Record<string, string> = {
   high: posterHigh,
 };
 
-export function PosterSliver({ id, caption }: { id: string; caption?: string }) {
+export function PosterPanel({ id, caption }: { id: string; caption?: string }) {
   const src = POSTERS[id];
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ["-14%", "14%"]);
-
   if (!src) return null;
 
   return (
-    <div
-      ref={ref}
-      aria-hidden
-      className="pointer-events-none absolute right-0 top-[7vh] bottom-[7vh] hidden w-[104px] overflow-hidden border-x border-foreground/20 lg:block xl:w-[128px]"
-    >
-      <motion.img
-        src={src}
-        alt=""
-        style={{ y }}
-        className="absolute inset-0 h-[128%] w-full object-cover"
-      />
-      <div className="absolute inset-0 bg-background/10 mix-blend-multiply" />
-      {caption && (
-        <span className="meta absolute bottom-3 left-1/2 origin-center -translate-x-1/2 rotate-180 text-[10px] tracking-[0.24em] text-background/90 [writing-mode:vertical-rl]">
-          {caption}
-        </span>
-      )}
-    </div>
+    <aside className="mt-10 w-full shrink-0 lg:mt-0 lg:w-[240px] xl:w-[280px]">
+      <motion.figure
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="lg:sticky lg:top-[16vh]"
+      >
+        <div className="group relative overflow-hidden border border-foreground/20 bg-secondary">
+          <img
+            src={src}
+            alt={caption ?? "program poster"}
+            loading="lazy"
+            className="block w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          />
+        </div>
+        {caption && (
+          <figcaption className="meta mt-2 flex items-center justify-between text-[10px] opacity-55">
+            <span>POSTER</span>
+            <span className="truncate pl-3">{caption}</span>
+          </figcaption>
+        )}
+      </motion.figure>
+    </aside>
   );
 }
