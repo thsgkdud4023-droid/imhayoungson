@@ -17,7 +17,7 @@ export function OpenInnovation() {
         ))}
       </h2>
 
-      <p className="ko-text mt-8 max-w-3xl text-lg leading-relaxed text-foreground/85 lg:whitespace-nowrap">
+      <p className="ko-text mt-8 text-lg leading-relaxed text-foreground/85 lg:whitespace-nowrap">
         {OPEN_INNOVATION.ko[0]}
         <br />
         {OPEN_INNOVATION.ko[1]}
@@ -35,10 +35,10 @@ export function OpenInnovation() {
           >
             <div className="flex flex-col gap-10 lg:flex-row lg:gap-10">
             <PosterPanel id={p.id} caption={`${p.client} · ${p.program}`} />
-            <div className="min-w-0 flex-1 grid grid-cols-1 gap-8 lg:grid-cols-12">
-              <div className="lg:col-span-4">
+            <div className="min-w-0 flex-1 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+              <div className="min-w-0">
                 <p className="text-lg font-bold tracking-tight text-foreground">{p.client}</p>
-                <h3 className="tight-display mt-3 text-[13vw] leading-[0.86] lg:text-[4.8vw]">
+                <h3 className="tight-display mt-3 text-[13vw] leading-[0.86] lg:text-[4.6vw]">
                   {p.program}
                 </h3>
 
@@ -53,13 +53,13 @@ export function OpenInnovation() {
 
               </div>
 
-              <div className="lg:col-span-8 lg:col-start-5">
+              <div className="min-w-0">
                 <p className="text-2xl font-medium leading-[1.3] tracking-tight text-foreground lg:text-3xl">{p.message}</p>
 
                 {"workstreams" in p && p.workstreams && p.workstreams.length > 0 && (
-                  <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                  <div className="mt-10 flex flex-wrap gap-8">
                     {p.workstreams.map((ws) => (
-                      <div key={ws.title}>
+                      <div key={ws.title} className="min-w-[160px] flex-1">
                         <p className="meta text-sm opacity-60">{ws.title}</p>
                         <StatBig
                           value={ws.stat.value}
