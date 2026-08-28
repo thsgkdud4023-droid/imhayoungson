@@ -4,14 +4,23 @@ import { motion, useInView } from "motion/react";
 type Props = {
   value: number;
   label: string;
+  unit?: string;
   className?: string;
+  unitClassName?: string;
   labelClassName?: string;
 };
 
 /** Big display number that counts up when it scrolls into view. */
-export function StatBig({ value, label, className = "", labelClassName = "" }: Props) {
+export function StatBig({
+  value,
+  label,
+  unit,
+  className = "",
+  unitClassName = "",
+  labelClassName = "",
+}: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-12%" });
+  const inView = useInView(ref, { once: true, amount: 0.15 });
   const [n, setN] = useState(0);
 
   useEffect(() => {
@@ -39,10 +48,15 @@ export function StatBig({ value, label, className = "", labelClassName = "" }: P
       ref={ref}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className={`tight-display tabular-nums leading-[0.85] ${className}`}>{n}</div>
+      <div className="flex items-baseline gap-2">
+        <span className={`tight-display tabular-nums leading-[0.85] ${className}`}>{n}</span>
+        {unit && (
+          <span className={`tight-display leading-none ${unitClassName}`}>{unit}</span>
+        )}
+      </div>
       <div className={`meta mt-2 opacity-70 ${labelClassName}`}>{label}</div>
     </motion.div>
   );

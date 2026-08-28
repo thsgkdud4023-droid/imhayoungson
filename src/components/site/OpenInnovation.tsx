@@ -29,7 +29,7 @@ export function OpenInnovation() {
             key={p.id}
             initial={{ opacity: 0, y: 48 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-8%" }}
+            viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
             className="relative border-t border-foreground/20 py-[7vh]"
           >
@@ -136,7 +136,7 @@ export function OpenInnovation() {
               key={p.org}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
+              viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.6, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
               className="border border-foreground/25 px-4 py-5"
             >
