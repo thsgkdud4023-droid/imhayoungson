@@ -79,15 +79,6 @@ export function Experience() {
         </div>
       </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-[8vh] max-w-4xl border-t border-foreground/20 pt-6 text-xl leading-[1.45] tracking-tight lg:text-[1.9vw]"
-      >
-        {EXPERIENCE.transition}
-      </motion.p>
     </section>
   );
 }
