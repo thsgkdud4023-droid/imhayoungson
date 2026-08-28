@@ -11,7 +11,14 @@ type Props = {
 };
 
 /** Big display number that counts up when it scrolls into view. */
-export function StatBig({ value, label, className = "", labelClassName = "" }: Props) {
+export function StatBig({
+  value,
+  label,
+  unit,
+  className = "",
+  unitClassName = "",
+  labelClassName = "",
+}: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.15 });
   const [n, setN] = useState(0);
