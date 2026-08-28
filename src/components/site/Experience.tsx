@@ -23,12 +23,16 @@ export function Experience() {
               <span>{e.track}</span>
             </div>
 
-            <h3 className="tight-display mt-6 text-[11vw] leading-[0.9] lg:text-[3.4vw]">
+            <h3 className="tight-display mt-6 text-[8.5vw] leading-[0.95] lg:text-[2.6vw]">
               {e.company}
             </h3>
-            <p className="meta mt-3 opacity-70">{e.role}</p>
+            <p className="mt-3 text-base font-medium tracking-tight text-foreground lg:text-lg">
+              {e.role}
+            </p>
 
-            <p className="mt-5 text-xl leading-[1.3] tracking-tight lg:text-2xl">{e.summary}</p>
+            <p className="mt-3 text-lg font-medium leading-[1.45] tracking-tight text-foreground/90 lg:text-xl">
+              {e.summary}
+            </p>
 
             <div className="meta mt-6 flex flex-wrap gap-2">
               {e.keywords.map((k) => (
