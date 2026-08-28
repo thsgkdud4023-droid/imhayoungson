@@ -6,60 +6,58 @@ import { SectionLabel } from "./SectionLabel";
 export function Experience() {
   return (
     <section id="experience" className="relative px-4 pt-[22vh] lg:px-14">
-      <SectionLabel no="02" title="EXPERIENCE" />
+      <SectionLabel no="01" title="EXPERIENCE" />
 
-      <div className="mt-[8vh] border-t border-foreground/20">
-        {EXPERIENCE.map((e) => (
-          <motion.div
+      <div className="mt-[8vh] grid grid-cols-1 gap-y-12 lg:grid-cols-11 lg:gap-x-8">
+        {EXPERIENCE.items.map((e, i) => (
+          <motion.article
             key={e.company}
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="group grid grid-cols-1 gap-6 border-b border-foreground/20 py-10 transition-colors hover:bg-secondary lg:grid-cols-12"
+            transition={{ duration: 0.85, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+            className="border-t border-foreground/25 pt-5 lg:col-span-5"
           >
-            <p className="meta lg:col-span-3">{e.period}</p>
-
-            <div className="lg:col-span-5">
-              <h3 className="tight-display text-[9vw] leading-[0.9] lg:text-[3vw]">{e.company}</h3>
-              <p className="meta mt-3 opacity-70">{e.role}</p>
-              <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl">
-                {e.summary}
-              </p>
+            <div className="meta flex items-center justify-between opacity-60">
+              <span>{e.period}</span>
+              <span>{e.track}</span>
             </div>
 
-            <div className="lg:col-span-4">
-              <ul className="meta space-y-2 text-muted-foreground">
-                {e.bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
+            <h3 className="tight-display mt-6 text-[11vw] leading-[0.9] lg:text-[3.4vw]">
+              {e.company}
+            </h3>
+            <p className="meta mt-3 opacity-70">{e.role}</p>
 
-              {e.projects && (
-                <div className="mt-8">
-                  <p className="meta opacity-60">{e.projects.label}</p>
-                  <p className="meta mt-2 leading-relaxed text-muted-foreground">
-                    {e.projects.items.join(" · ")}
-                  </p>
-                </div>
-              )}
+            <p className="mt-5 text-xl leading-[1.3] tracking-tight lg:text-2xl">{e.summary}</p>
 
-              {e.metrics && (
-                <div className="mt-8">
-                  <p className="meta opacity-60">{e.metrics.label}</p>
-                  <ul className="meta mt-3 grid grid-cols-1 gap-2 text-muted-foreground sm:grid-cols-2">
-                    {e.metrics.items.map((m) => (
-                      <li key={m} className="border-t border-foreground/15 pt-2">
-                        {m}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            <div className="meta mt-6 flex flex-wrap gap-2">
+              {e.keywords.map((k) => (
+                <span key={k} className="border border-foreground/25 px-2 py-1">
+                  {k}
+                </span>
+              ))}
             </div>
-          </motion.div>
+          </motion.article>
         ))}
+
+        {/* arrow between the two experiences */}
+        <div
+          aria-hidden
+          className="hidden items-center justify-center lg:col-span-1 lg:col-start-6 lg:row-start-1 lg:flex"
+        >
+          <span className="tight-display text-[2.4vw] opacity-40">→</span>
+        </div>
       </div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-10%" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="mt-[8vh] max-w-4xl border-t border-foreground/20 pt-6 text-xl leading-[1.45] tracking-tight lg:text-[1.9vw]"
+      >
+        {EXPERIENCE.transition}
+      </motion.p>
     </section>
   );
 }
