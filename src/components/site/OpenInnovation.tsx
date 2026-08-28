@@ -31,10 +31,10 @@ export function OpenInnovation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-8%" }}
             transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
-            className="relative border-t border-foreground/20 py-[7vh] lg:pr-[9rem] xl:pr-[11rem]"
+            className="relative border-t border-foreground/20 py-[7vh]"
           >
-            <PosterSliver id={p.id} caption={`${p.client} · ${p.program}`} />
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+            <div className="flex flex-col gap-10 lg:flex-row lg:gap-14">
+            <div className="min-w-0 flex-1 grid grid-cols-1 gap-8 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <p className="meta opacity-60">{p.client}</p>
                 <h3 className="tight-display mt-3 text-[13vw] leading-[0.86] lg:text-[4.8vw]">
