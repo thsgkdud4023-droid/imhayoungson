@@ -4,7 +4,9 @@ import { motion, useInView } from "motion/react";
 type Props = {
   value: number;
   label: string;
+  unit?: string;
   className?: string;
+  unitClassName?: string;
   labelClassName?: string;
 };
 
