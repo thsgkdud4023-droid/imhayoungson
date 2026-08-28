@@ -17,7 +17,7 @@ export function OpenInnovation() {
         ))}
       </h2>
 
-      <p className="ko-text mt-8 text-lg leading-relaxed text-foreground/85 lg:whitespace-nowrap">
+      <p className="ko-text mt-8 max-w-5xl text-xl leading-[1.65] text-foreground lg:text-2xl">
         {OPEN_INNOVATION.ko[0]}
         <br />
         {OPEN_INNOVATION.ko[1]}
@@ -54,7 +54,7 @@ export function OpenInnovation() {
               </div>
 
               <div className="min-w-0">
-                <p className="text-2xl font-medium leading-[1.3] tracking-tight text-foreground lg:text-3xl">{p.message}</p>
+                <p className="text-3xl font-medium leading-[1.5] tracking-tight text-foreground lg:text-4xl">{p.message}</p>
 
                 {"workstreams" in p && p.workstreams && p.workstreams.length > 0 && (
                   <div className="mt-10 flex flex-wrap gap-8">
@@ -66,7 +66,7 @@ export function OpenInnovation() {
                           label={ws.stat.label}
                           className="mt-2 text-[14vw] lg:text-[4vw]"
                         />
-                        <p className="mt-3 text-base leading-snug text-foreground/80">
+                        <p className="mt-3 text-lg leading-relaxed text-foreground">
                           {ws.description}
                         </p>
                       </div>
@@ -131,7 +131,7 @@ export function OpenInnovation() {
                 {p.role && (
                   <div className="mt-8">
                     <span className="meta opacity-60">주요 역할</span>
-                    <p className="mt-1 text-base font-medium text-foreground">{p.role}</p>
+                    <p className="mt-1 text-lg font-medium leading-relaxed text-foreground">{p.role}</p>
                   </div>
                 )}
 

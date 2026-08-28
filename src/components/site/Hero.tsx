@@ -100,7 +100,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="mt-5"
         >
-          <p className="tight-display ko-text text-2xl font-black leading-[1.2] tracking-[-0.02em] text-foreground lg:whitespace-nowrap lg:text-[2.1vw]">
+          <p className="tight-display ko-text text-3xl font-black leading-[1.55] tracking-[-0.02em] text-foreground lg:whitespace-nowrap lg:text-[2.3vw]">
             <span className="bg-background px-1.5 py-1 text-foreground" style={{ boxDecorationBreak: "clone" }}>투자 검토와 집행</span>으로 커리어를 시작해,
             <br />
             현재는 대기업과 스타트업을 연결하는 <span className="bg-background px-1.5 py-1 text-foreground" style={{ boxDecorationBreak: "clone" }}>오픈이노베이션</span> 업무를 수행하고 있습니다.
