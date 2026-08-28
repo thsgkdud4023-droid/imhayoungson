@@ -48,13 +48,7 @@ export function OpenInnovation() {
                 <p className="meta opacity-60">{p.client}</p>
                 <h3 className="mt-3">
                   {LOCKUPS[p.id] ? (
-                    <motion.span
-                      initial={{ opacity: 0, y: 18, clipPath: "inset(0 100% 0 0)" }}
-                      whileInView={{ opacity: 1, y: 0, clipPath: "inset(0 0% 0 0)" }}
-                      viewport={{ once: true, margin: "-12%" }}
-                      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                      className="block w-fit max-w-full overflow-hidden border border-foreground/25"
-                    >
+                    <span className="block w-fit max-w-full overflow-hidden border border-foreground/25">
                       <img
                         src={LOCKUPS[p.id]}
                         alt={`${p.client} ${p.program}`}
