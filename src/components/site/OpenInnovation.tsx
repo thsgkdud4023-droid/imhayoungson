@@ -35,8 +35,8 @@ export function OpenInnovation() {
           >
             <div className="flex flex-col gap-10 lg:flex-row lg:gap-10">
             <PosterPanel id={p.id} caption={`${p.client} · ${p.program}`} />
-            <div className="min-w-0 flex-1 grid grid-cols-1 gap-10 lg:grid-cols-12">
-              <div className="min-w-0 lg:col-span-7">
+            <div className="min-w-0 flex-1 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+              <div className="min-w-0">
                 <p className="text-lg font-bold tracking-tight text-foreground">{p.client}</p>
                 <h3 className="tight-display mt-3 text-[13vw] leading-[0.86] lg:text-[4.6vw]">
                   {p.program}
@@ -53,7 +53,7 @@ export function OpenInnovation() {
 
               </div>
 
-              <div className="min-w-0 lg:col-span-5 lg:col-start-8">
+              <div className="min-w-0">
                 <p className="text-2xl font-medium leading-[1.3] tracking-tight text-foreground lg:text-3xl">{p.message}</p>
 
                 {"workstreams" in p && p.workstreams && p.workstreams.length > 0 && (
