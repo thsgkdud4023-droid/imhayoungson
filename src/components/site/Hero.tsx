@@ -10,7 +10,7 @@ export function Hero() {
   const ready = useReveal();
 
   return (
-    <section className="warp-stage relative flex min-h-[100svh] flex-col overflow-hidden px-4 pb-10 pt-[26vh] lg:px-14">
+    <section className="warp-stage relative flex min-h-[100svh] flex-col overflow-hidden px-4 pb-10 pt-[22vh] lg:px-14">
       <WarpBackground />
 
       <div className="relative z-10 flex flex-1 flex-col">
@@ -34,7 +34,7 @@ export function Hero() {
           <p className="meta mt-6 opacity-60">{HERO.kicker}</p>
         </motion.div>
 
-        <div className="mt-auto grid grid-cols-2 gap-y-10 border-t border-current/20 pt-8 lg:grid-cols-4">
+        <div className="mt-[12vh] grid lg:mt-auto grid-cols-2 gap-y-10 border-t border-current/20 pt-8 lg:grid-cols-4">
           {HERO.stats.map((s) => (
             <StatBig
               key={s.label}

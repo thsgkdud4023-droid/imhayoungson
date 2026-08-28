@@ -39,7 +39,7 @@ export function WarpBackground({ density = 1, rings = false, className = "" }: P
     let raf = 0;
     let running = true;
 
-    const count = Math.round((mobile ? 220 : 520) * density);
+    const count = Math.round((mobile ? 320 : 900) * density);
     const streaks: Streak[] = [];
     const squares = Array.from({ length: mobile ? 10 : 22 }, () => ({
       x: Math.random(),
@@ -99,7 +99,7 @@ export function WarpBackground({ density = 1, rings = false, className = "" }: P
 
       const ox = cx * w;
       const oy = cy * h;
-      const speed = (0.006 + boost * 0.006) * (reduced ? 0 : 1);
+      const speed = (0.0075 + boost * 0.006) * (reduced ? 0 : 1);
       const focal = Math.max(w, h) * 0.7;
 
       ctx.fillStyle = "hsl(0 0% 4%)";
@@ -114,11 +114,11 @@ export function WarpBackground({ density = 1, rings = false, className = "" }: P
           continue;
         }
         const k = focal / (s.z * focal);
-        const x1 = ox + s.x * k * 60;
-        const y1 = oy + s.y * k * 60;
+        const x1 = ox + s.x * k * 130;
+        const y1 = oy + s.y * k * 130;
         const k2 = focal / (s.pz * focal);
-        const x2 = ox + s.x * k2 * 60;
-        const y2 = oy + s.y * k2 * 60;
+        const x2 = ox + s.x * k2 * 130;
+        const y2 = oy + s.y * k2 * 130;
 
         if (x1 < -200 || x1 > w + 200 || y1 < -200 || y1 > h + 200) {
           reset(s);
@@ -127,7 +127,7 @@ export function WarpBackground({ density = 1, rings = false, className = "" }: P
 
         const alpha = Math.min(1, (1 - s.z) * 1.4);
         ctx.strokeStyle = `hsl(${NEON[s.hue]} / ${alpha.toFixed(3)})`;
-        ctx.lineWidth = Math.max(0.6, (1 - s.z) * 2.6);
+        ctx.lineWidth = Math.max(0.7, (1 - s.z) * 3.2);
         ctx.beginPath();
         ctx.moveTo(x2, y2);
         ctx.lineTo(x1, y1);

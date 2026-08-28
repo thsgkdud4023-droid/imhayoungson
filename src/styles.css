@@ -217,3 +217,9 @@
   color: oklch(0.98 0 0);
   --border: oklch(1 0 0 / 20%);
 }
+
+/* HUD chrome stays legible over both paper and warp sections */
+@utility hud-invert {
+  mix-blend-mode: difference;
+  color: oklch(1 0 0);
+}

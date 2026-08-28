@@ -56,7 +56,7 @@ export function Frame() {
   };
 
   return (
-    <header className="pointer-events-none fixed inset-0 z-50 flex flex-col justify-between">
+    <header className="hud-invert pointer-events-none fixed inset-0 z-50 flex flex-col justify-between">
       <motion.div
         {...fade}
         className="flex items-center justify-between px-4 py-4 lg:px-14 lg:py-7"
@@ -97,14 +97,14 @@ export function Frame() {
         {...fade}
         className="flex items-end justify-between px-4 py-4 lg:px-14 lg:py-7"
       >
-        <span className="meta p-2 text-muted-foreground">
+        <span className="meta p-2">
           <span className="hidden lg:inline">GMT+9 KR </span>
           {time}
         </span>
-        <span className="meta hidden p-2 text-muted-foreground lg:inline">
+        <span className="meta hidden p-2 lg:inline">
           {pad(x)} X {pad(y)} Y
         </span>
-        <span className="meta p-2 text-muted-foreground">©{new Date().getFullYear()}</span>
+        <span className="meta p-2">©{new Date().getFullYear()}</span>
       </motion.div>
     </header>
   );
