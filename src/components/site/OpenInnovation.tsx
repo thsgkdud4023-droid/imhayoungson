@@ -8,7 +8,7 @@ import { StatBig } from "./StatBig";
 export function OpenInnovation() {
   return (
     <section id="open-innovation" className="relative px-4 pt-[22vh] lg:px-14">
-      <SectionLabel no="02" title="OPEN INNOVATION" />
+      <SectionLabel no="03" title="OPEN INNOVATION" />
 
       <h2 className="tight-display mt-8 text-[10vw] leading-[0.9] lg:text-[5.4vw]">
         {OPEN_INNOVATION.headline.map((line, i) => (
