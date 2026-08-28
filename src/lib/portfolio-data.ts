@@ -36,8 +36,8 @@ export const EXPERIENCE = {
     {
       period: "2025.10 – 현재",
       company: "마크앤컴퍼니",
-      role: "Accelerating 부문 · OI팀",
-      summary: "대기업 및 금융사 오픈이노베이션 프로그램 기획·운영",
+      role: "오픈이노베이션팀 · 매니저",
+      summary: "대기업 및 공공기관 오픈이노베이션 프로그램 기획·운영",
       keywords: ["스타트업 소싱", "현업과제 발굴", "기업선발", "PoC"],
       track: "Open Innovation",
     },
