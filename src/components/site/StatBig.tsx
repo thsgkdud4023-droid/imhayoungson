@@ -51,7 +51,12 @@ export function StatBig({
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className={`tight-display tabular-nums leading-[0.85] ${className}`}>{n}</div>
+      <div className="flex items-baseline gap-2">
+        <span className={`tight-display tabular-nums leading-[0.85] ${className}`}>{n}</span>
+        {unit && (
+          <span className={`tight-display leading-none ${unitClassName}`}>{unit}</span>
+        )}
+      </div>
       <div className={`meta mt-2 opacity-70 ${labelClassName}`}>{label}</div>
     </motion.div>
   );
