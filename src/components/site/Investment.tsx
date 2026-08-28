@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 
 import { INVESTMENT } from "@/lib/portfolio-data";
 import { SectionLabel } from "./SectionLabel";
@@ -7,16 +6,15 @@ import { SplitText } from "./SplitText";
 import { StatBig } from "./StatBig";
 
 function FlowRail() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const active = useTransform(scrollYProgress, [0.15, 0.85], [0, INVESTMENT.flow.length - 1]);
-
   return (
-    <div ref={ref} className="mt-[10vh] grid grid-cols-1 gap-6 border-y border-foreground/20 py-8 lg:grid-cols-4">
+    <div className="mt-[10vh] grid grid-cols-1 gap-6 border-y border-foreground/20 py-8 lg:grid-cols-4">
       {INVESTMENT.flow.map((step, i) => (
         <motion.div
           key={step.key}
-          style={{ opacity: useTransform(active, (v) => (Math.abs(v - i) < 0.6 ? 1 : 0.35)) }}
+          initial={{ opacity: 0.2, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="meta flex items-center gap-2">
             <span className="bg-lime px-2 py-1 text-lime-foreground">{step.key}</span>

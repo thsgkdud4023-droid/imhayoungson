@@ -15,10 +15,10 @@ export const HERO = {
   kicker: "Investment · Fund Operations · Portfolio · Open Innovation",
   primaryStats: [
     { value: 27, label: "투자집행 기업" },
-    { value: 104, label: "예비투심 검토 기업" },
+    { value: 23, label: "조합 정기 영업보고" },
   ],
   secondaryStats: [
-    { value: 23, label: "조합 정기 영업보고" },
+    { value: 104, label: "예비투심 검토 기업" },
     { value: 6, label: "TIPS 선정기업" },
   ],
 };
@@ -139,9 +139,9 @@ export const OPEN_INNOVATION = {
       recruitment: ["핀테크", "AI", "데이터", "금융업무 혁신"],
       message:
         "금융 현업 수요를 기반으로 협업과제를 구체화하고, 적합한 스타트업을 발굴·선정해 PoC 실행까지 지원했습니다.",
-      counts: [{ value: 7, label: "개 협업과제 운영" }],
+      counts: [],
       funnel: null as { steps: string[]; labels: string[]; } | null,
-      stats: [],
+      stats: [{ value: 7, label: "협업과제 운영" }],
       flow: [],
       bullets: [],
       tags: ["정기 과제 5개 · 수요 기반 과제 2개"],
