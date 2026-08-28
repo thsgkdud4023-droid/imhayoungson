@@ -197,6 +197,12 @@
   text-transform: uppercase;
 }
 
+/* Korean body copy: keep words whole and only break at intentional spaces. */
+@utility ko-text {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
