@@ -49,128 +49,68 @@ export function Investment() {
       <FlowRail />
 
       <div className="mt-[6vh]">
-        {INVESTMENT.blocks.map((b) => {
-          const hasLeft = b.stats.length > 0 || b.headline.length > 0;
-          return (
-            <motion.article
-              key={b.no}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="border-b border-foreground/15 py-[5.5vh]"
-            >
-              <p className="meta opacity-60">
-                {b.no} — {b.title}
-              </p>
+        {INVESTMENT.blocks.map((b) => (
+          <motion.article
+            key={b.no}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="border-b border-foreground/15 py-[5.5vh]"
+          >
+            <p className="meta opacity-60">
+              {b.no} — {b.title}
+            </p>
 
-              <div className="mt-4 grid grid-cols-1 gap-8 lg:grid-cols-12">
-                {hasLeft ? (
-                  <>
-                    <div className="lg:col-span-5">
-                      {b.stats.length > 0 && (
-                        <div className="flex flex-wrap gap-x-12 gap-y-6">
-                          {b.stats.map((s) => (
-                            <StatBig
-                              key={s.label}
-                              value={s.value}
-                              label={s.label}
-                              unit={s.unit}
-                              className="text-[18vw] lg:text-[6.4vw]"
-                              unitClassName="text-[6vw] lg:text-[2vw]"
-                            />
-                          ))}
-                        </div>
-                      )}
-
-                      {b.headline.length > 0 && (
-                        <div className="tight-display mt-6 text-[7vw] leading-[1.05] lg:text-[2.4vw]">
-                          {b.headline.map((h) => (
-                            <div key={h}>{h}</div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="lg:col-span-6 lg:col-start-7">
-                      {b.body && (
-                        <p className="text-2xl leading-[1.3] tracking-tight lg:text-3xl">{b.body}</p>
-                      )}
-
-                      {b.process.length > 0 && (
-                        <div className="meta mb-8 flex flex-wrap items-center gap-3">
-                          {b.process.map((p, i) => (
-                            <span key={p} className="flex items-center gap-3">
-                              <span className="border border-foreground/30 px-2 py-1">{p}</span>
-                              {i < b.process.length - 1 && <span className="opacity-40">→</span>}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-
-                      {b.bullets.length > 0 && (
-                        <ul className="mt-2 grid grid-cols-1 gap-2 text-base text-foreground/80 sm:grid-cols-2">
-                          {b.bullets.map((x) => (
-                            <li key={x} className="border-t border-foreground/15 pt-2 leading-snug">
-                              {x}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-
-                      {b.tags.length > 0 && (
-                        <div className="meta mt-8 flex flex-wrap gap-2 text-xs opacity-70">
-                          {b.tags.map((tag) => (
-                            <span key={tag} className="bg-secondary px-3 py-1.5">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </>
+            <div className="mt-4 grid grid-cols-1 gap-10 lg:grid-cols-12">
+              <div className="lg:col-span-5">
+                {b.stats.length > 0 ? (
+                  <div className="flex flex-wrap gap-x-12 gap-y-6">
+                    {b.stats.map((s) => (
+                      <StatBig
+                        key={s.label}
+                        value={s.value}
+                        label={s.label}
+                        unit={s.unit}
+                        className="text-[18vw] lg:text-[6.4vw]"
+                        unitClassName="text-[6vw] lg:text-[2vw]"
+                      />
+                    ))}
+                  </div>
                 ) : (
-                  <div className="lg:col-span-8">
-                    {b.body && (
-                      <p className="text-2xl leading-[1.3] tracking-tight lg:text-3xl">{b.body}</p>
-                    )}
-
-                    {b.process.length > 0 && (
-                      <div className="meta mb-8 flex flex-wrap items-center gap-3">
-                        {b.process.map((p, i) => (
-                          <span key={p} className="flex items-center gap-3">
-                            <span className="border border-foreground/30 px-2 py-1">{p}</span>
-                            {i < b.process.length - 1 && <span className="opacity-40">→</span>}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {b.bullets.length > 0 && (
-                      <ul className="mt-6 grid grid-cols-1 gap-2 text-base text-foreground/80 sm:grid-cols-2">
-                        {b.bullets.map((x) => (
-                          <li key={x} className="border-t border-foreground/15 pt-2 leading-snug">
-                            {x}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {b.tags.length > 0 && (
-                      <div className="meta mt-8 flex flex-wrap gap-2 text-xs opacity-70">
-                        {b.tags.map((tag) => (
-                          <span key={tag} className="bg-secondary px-3 py-1.5">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                  <div className="tight-display text-[7vw] leading-[1.05] lg:text-[2.4vw]">
+                    {b.headline.map((h) => (
+                      <div key={h}>{h}</div>
+                    ))}
                   </div>
                 )}
               </div>
-            </motion.article>
-          );
-        })}
+
+              <div className="lg:col-span-6 lg:col-start-7">
+                {b.process.length > 0 && (
+                  <div className="meta flex flex-wrap items-center gap-3 text-foreground/80">
+                    {b.process.map((p, i) => (
+                      <span key={p} className="flex items-center gap-3">
+                        <span className="border border-foreground/20 px-2 py-0.5">{p}</span>
+                        {i < b.process.length - 1 && <span className="opacity-40">→</span>}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {b.bullets.length > 0 && (
+                  <ul className="mt-6 grid grid-cols-1 gap-2 text-base text-foreground/80 sm:grid-cols-2">
+                    {b.bullets.map((x) => (
+                      <li key={x} className="border-t border-foreground/15 pt-2 leading-snug">
+                        {x}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </motion.article>
+        ))}
       </div>
 
       <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-baseline lg:gap-16">
