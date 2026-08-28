@@ -131,7 +131,7 @@ export function OpenInnovation() {
                 {p.role && (
                   <div className="mt-8">
                     <span className="meta opacity-60">주요 역할</span>
-                    <p className="mt-1 text-base font-medium text-foreground">{p.role}</p>
+                    <p className="mt-1 text-lg font-medium leading-relaxed text-foreground">{p.role}</p>
                   </div>
                 )}
 
