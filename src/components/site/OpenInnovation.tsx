@@ -46,8 +46,28 @@ export function OpenInnovation() {
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
               <div className="lg:col-span-5">
                 <p className="meta opacity-60">{p.client}</p>
-                <h3 className="tight-display mt-3 text-[13vw] leading-[0.86] lg:text-[4.8vw]">
-                  {p.program}
+                <h3 className="mt-3">
+                  {LOCKUPS[p.id] ? (
+                    <motion.span
+                      initial={{ opacity: 0, y: 18, clipPath: "inset(0 100% 0 0)" }}
+                      whileInView={{ opacity: 1, y: 0, clipPath: "inset(0 0% 0 0)" }}
+                      viewport={{ once: true, margin: "-12%" }}
+                      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                      className="block w-fit max-w-full overflow-hidden border border-foreground/25"
+                    >
+                      <img
+                        src={LOCKUPS[p.id]}
+                        alt={`${p.client} ${p.program}`}
+                        loading="lazy"
+                        className="block h-auto w-full max-w-[420px] object-contain transition-transform duration-700 hover:scale-[1.02]"
+                      />
+                    </motion.span>
+                  ) : (
+                    <span className="tight-display block text-[13vw] leading-[0.86] lg:text-[4.8vw]">
+                      {p.program}
+                    </span>
+                  )}
+                  <span className="sr-only">{p.program}</span>
                 </h3>
                 <p className="meta mt-4 inline-block bg-secondary px-2 py-1">{p.category}</p>
 
