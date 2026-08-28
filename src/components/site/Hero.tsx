@@ -12,9 +12,9 @@ import objChart from "@/assets/obj-chart.png";
 import objRocket from "@/assets/obj-rocket.png";
 
 const STICKERS = [
-  { src: objCoins, className: "left-[4%] top-[-12%] w-[10vw] max-w-[110px]", depth: 22, rotate: -10, duration: 6.2, delay: 0 },
-  { src: objChart, className: "right-[5%] top-[-18%] w-[9vw] max-w-[100px]", depth: -18, rotate: 7, duration: 7.5, delay: 1.4 },
-  { src: objRocket, className: "left-[18%] top-[-16%] w-[9vw] max-w-[100px]", depth: 14, rotate: -6, duration: 6.8, delay: 2.6 },
+  { src: objCoins, className: "left-[4%] top-[-12%] w-[10vw] max-w-[110px]", depth: 22, rotate: -10, duration: 10.5, delay: 0, opacity: 0.35 },
+  { src: objChart, className: "right-[5%] top-[-18%] w-[9vw] max-w-[100px]", depth: -18, rotate: 7, duration: 12.0, delay: 2.2, opacity: 0.35 },
+  { src: objRocket, className: "left-[18%] top-[-16%] w-[9vw] max-w-[100px]", depth: 14, rotate: -6, duration: 11.0, delay: 4.0, opacity: 0.35 },
 ];
 
 
@@ -78,6 +78,7 @@ export function Hero() {
                 src={s.src}
                 alt=""
                 className="w-full select-none drop-shadow-xl will-change-transform"
+                style={{ opacity: s.opacity }}
                 animate={{ x: pointer.x * s.depth, y: pointer.y * s.depth }}
                 transition={{ type: "spring", stiffness: 60, damping: 18 }}
               />
