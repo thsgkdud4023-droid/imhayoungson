@@ -6,7 +6,7 @@ import { SectionLabel } from "./SectionLabel";
 export function Experience() {
   return (
     <section id="experience" className="relative px-4 pt-[22vh] lg:px-14">
-      <SectionLabel no="03" title="EXPERIENCE" />
+      <SectionLabel no="02" title="EXPERIENCE" />
 
       <div className="mt-[8vh] border-t border-foreground/20">
         {EXPERIENCE.map((e) => (
@@ -23,14 +23,39 @@ export function Experience() {
             <div className="lg:col-span-5">
               <h3 className="tight-display text-[9vw] leading-[0.9] lg:text-[3vw]">{e.company}</h3>
               <p className="meta mt-3 opacity-70">{e.role}</p>
-              <p className="meta mt-2 text-muted-foreground">{e.keywords}</p>
+              <p className="text-lg leading-relaxed tracking-tight text-muted-foreground lg:text-xl">
+                {e.summary}
+              </p>
             </div>
 
             <div className="lg:col-span-4">
-              {e.aside.label && <p className="meta opacity-60">{e.aside.label}</p>}
-              <p className="meta mt-2 leading-relaxed text-muted-foreground">
-                {e.aside.items.join(" · ")}
-              </p>
+              <ul className="meta space-y-2 text-muted-foreground">
+                {e.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+
+              {e.projects && (
+                <div className="mt-8">
+                  <p className="meta opacity-60">{e.projects.label}</p>
+                  <p className="meta mt-2 leading-relaxed text-muted-foreground">
+                    {e.projects.items.join(" · ")}
+                  </p>
+                </div>
+              )}
+
+              {e.metrics && (
+                <div className="mt-8">
+                  <p className="meta opacity-60">{e.metrics.label}</p>
+                  <ul className="meta mt-3 grid grid-cols-1 gap-2 text-muted-foreground sm:grid-cols-2">
+                    {e.metrics.items.map((m) => (
+                      <li key={m} className="border-t border-foreground/15 pt-2">
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </motion.div>
         ))}
