@@ -10,13 +10,11 @@ import hello3d from "@/assets/hello-3d.png";
 import objCoins from "@/assets/obj-coins.png";
 import objChart from "@/assets/obj-chart.png";
 import objRocket from "@/assets/obj-rocket.png";
-import objHandshake from "@/assets/obj-handshake.png";
 
 const STICKERS = [
-  { src: objCoins, className: "left-[6%] top-[18%] w-[12vw] max-w-[130px]", depth: 28, rotate: -10 },
-  { src: objChart, className: "right-[9%] top-[22%] w-[11vw] max-w-[120px]", depth: -22, rotate: 7 },
-  { src: objRocket, className: "left-[21%] bottom-[26%] w-[11vw] max-w-[120px]", depth: 16, rotate: -6 },
-  { src: objHandshake, className: "right-[19%] bottom-[30%] w-[10vw] max-w-[110px]", depth: -14, rotate: 12 },
+  { src: objCoins, className: "left-[6%] top-[18%] w-[10vw] max-w-[110px]", depth: 22, rotate: -10 },
+  { src: objChart, className: "right-[9%] top-[22%] w-[9vw] max-w-[100px]", depth: -18, rotate: 7 },
+  { src: objRocket, className: "left-[21%] bottom-[26%] w-[9vw] max-w-[100px]", depth: 14, rotate: -6 },
 ];
 
 
@@ -51,7 +49,7 @@ export function Hero() {
         <motion.img
           src={hello3d}
           alt=""
-          className="absolute left-1/2 top-1/2 w-[68vw] max-w-[1020px] -translate-x-1/2 -translate-y-1/2 select-none opacity-55 mix-blend-luminosity"
+          className="absolute left-1/2 top-1/2 w-[92vw] max-w-[1380px] -translate-x-1/2 -translate-y-1/2 select-none opacity-90 mix-blend-luminosity"
           style={{ y: lettersY, scale: lettersScale, x: pointer.x * -12 }}
         />
         {STICKERS.map((s, i) => (
@@ -68,7 +66,7 @@ export function Hero() {
       </motion.div>
 
       <div className="relative z-10 flex flex-1 flex-col text-foreground">
-        <h1 className="tight-display text-[8.8vw] leading-[0.93] lg:text-[5vw]">
+        <h1 className="tight-display text-[11vw] leading-[0.9] lg:text-[6.5vw]">
           {HERO.titleLines.map((line, i) => (
             <SplitText key={line} as="div" text={line} delay={0.25 + i * 0.08} />
           ))}
@@ -81,7 +79,7 @@ export function Hero() {
           className="mt-5 max-w-lg"
         >
           {HERO.ko.map((line) => (
-            <p key={line} className="text-[14px] leading-relaxed opacity-70 lg:text-[15px]">
+            <p key={line} className="text-[15px] leading-relaxed opacity-70 lg:text-[17px]">
               {line}
             </p>
           ))}
@@ -95,7 +93,7 @@ export function Hero() {
                 key={s.label}
                 value={s.value}
                 label={s.label}
-                className="text-[16vw] lg:text-[4.8vw]"
+                className="text-[18vw] lg:text-[5.8vw]"
               />
             ))}
           </div>
@@ -105,7 +103,7 @@ export function Hero() {
                 key={s.label}
                 value={s.value}
                 label={s.label}
-                className="text-[6.8vw] opacity-60 lg:text-[1.7vw]"
+                className="text-[8vw] opacity-60 lg:text-[2vw]"
                 labelClassName="opacity-50"
               />
             ))}
