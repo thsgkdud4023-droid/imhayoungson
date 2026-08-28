@@ -10,26 +10,25 @@ export function Contact() {
       className="relative mt-[18vh] flex min-h-[92svh] flex-col overflow-hidden px-4 pb-[8vh] pt-[10vh] lg:px-14"
     >
       {/* single glossy object, slow float behind the type */}
-      <motion.img
-        src={arrowBlue}
-        alt=""
+      <motion.div
         aria-hidden
-        loading="lazy"
-        width={1024}
-        height={1024}
-        initial={{ opacity: 0, y: 60, rotate: -6 }}
+        initial={{ opacity: 0, y: 80, rotate: -8 }}
         whileInView={{ opacity: 1, y: 0, rotate: 0 }}
         viewport={{ once: true, margin: "-15%" }}
         transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-[70vw] max-w-[720px] -translate-x-1/2 -translate-y-1/2 select-none"
+        className="pointer-events-none absolute left-1/2 top-1/2 z-0 w-[70vw] max-w-[720px] -translate-x-1/2 -translate-y-1/2"
       >
-      </motion.img>
-      <motion.div
-        aria-hidden
-        animate={{ y: [0, -22, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute inset-0 z-0"
-      />
+        <motion.img
+          src={arrowBlue}
+          alt=""
+          loading="lazy"
+          width={1024}
+          height={1024}
+          animate={{ y: [0, -24, 0], rotate: [0, 2, 0] }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+          className="w-full select-none"
+        />
+      </motion.div>
 
       <div className="meta relative z-10 flex items-center gap-3">
         <span className="inline-block h-2 w-6 bg-lime" />
