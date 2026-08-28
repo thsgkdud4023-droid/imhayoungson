@@ -182,30 +182,52 @@ export const OPEN_INNOVATION = {
 
 export const EXPERIENCE = [
   {
-    period: "2025.10 — PRESENT",
-    company: "MARK & COMPANY",
-    role: "Accelerating / Open Innovation",
-    keywords: "Corporate OI · Startup Sourcing · PoC · Startup Acceleration",
-    aside: {
-      label: "Selected Clients",
+    period: "2025.10 — 현재",
+    company: "마크앤컴퍼니",
+    role: "Accelerating 부문 · OI팀",
+    summary: "대기업 및 금융사 오픈이노베이션 프로그램 기획·운영",
+    bullets: [
+      "대기업 현업 수요 기반 협업과제 발굴 및 스타트업 소싱",
+      "지원기업 모집·평가 및 최종 협업기업 선발",
+      "현업부서-스타트업 간 PoC 계획 수립 및 진행 모니터링",
+      "선정기업 성장지원 및 투자·사업협력 연계",
+    ],
+    projects: {
+      label: "주요 프로젝트",
       items: [
-        "Samsung",
-        "IBK",
-        "Hyundai Motor Group",
-        "Hyundai Home Shopping",
-        "CJ",
-        "Korea Tourism Organization",
+        "IBK기업은행 1st LAB",
+        "삼성웰스토리 W.I.T",
+        "현대자동차그룹 ZERO1NE",
+        "현대홈쇼핑 H.I.G.H",
+        "삼성증권 C-Lab Outside",
+        "CJ제일제당 Frontier Labs",
+        "한국관광공사 관광플러스테크",
       ],
     },
+    metrics: null,
   },
   {
     period: "2024.03 — 2025.02",
-    company: "Y&ARCHER",
-    role: "Investment",
-    keywords: "Fund Operations · Investment Review · Execution · Portfolio Management",
-    aside: {
-      label: "",
-      items: ["27 Investments", "104 Reviews", "TIPS / LIPS"],
+    company: "와이앤아처",
+    role: "투자지원센터 · 선임심사역",
+    summary: "벤처투자조합 운용 및 투자집행",
+    bullets: [
+      "펀드 결성 및 조합 운용",
+      "예비·본 투자심의위원회 운영 및 투자검토 지원",
+      "투자계약 검토 및 투자금 납입 등 투자집행",
+      "피투자기업 모니터링 및 사후관리",
+      "TIPS 및 LIPS 기업 추천·운영",
+    ],
+    projects: null,
+    metrics: {
+      label: "Key Metrics",
+      items: [
+        "27개사 투자집행",
+        "104개사 예비투심 검토",
+        "2024년 4개 펀드 결성",
+        "23개 조합 정기 영업보고",
+        "TIPS 7개사 추천 / 6개사 선정",
+      ],
     },
   },
 ];
@@ -248,22 +270,20 @@ export const ABOUT = {
   ],
   education: [
     {
-      title: "Myongji University",
-      lines: ["B.B.A. Business Administration", "Minor in RPA Management"],
+      title: "명지대학교",
+      lines: ["경영대학 경영학 학사", "RPA경영 연계전공", "2020.02 – 2024.08"],
     },
     {
       title: "Université Catholique de Lille",
-      lines: ["Exchange Student · France"],
+      lines: ["교환학생 · 프랑스", "2023.01 – 2023.06"],
     },
-    { title: "OPIc", lines: ["IH"] },
+    { title: "OPIc IH", lines: ["2025.09"] },
   ],
 };
 
 export const CONTACT = {
   lines: ["Let's talk about", "startups and investment."],
   links: [
-    { label: "Email", value: "hayoung@example.com", href: "mailto:hayoung@example.com" },
-    { label: "LinkedIn", value: "@sonhayoung", href: "https://linkedin.com" },
-    { label: "Resume", value: "Download ↗", href: "#contact" },
+    { label: "Email", value: "thsgkdud4023@naver.com", href: "mailto:thsgkdud4023@naver.com" },
   ],
 };
