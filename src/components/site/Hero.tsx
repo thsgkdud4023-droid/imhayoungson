@@ -98,12 +98,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={ready ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-5 max-w-3xl"
+          className="mt-5"
         >
           <p className="tight-display ko-text text-2xl font-black leading-[1.2] tracking-[-0.02em] text-foreground lg:whitespace-nowrap lg:text-[2.1vw]">
-            <span className="bg-background pl-2 pr-0 py-1 text-foreground" style={{ boxDecorationBreak: "clone" }}>투자 검토와 집행</span>으로 커리어를 시작해,
+            <span className="bg-background px-1.5 py-1 text-foreground" style={{ boxDecorationBreak: "clone" }}>투자 검토와 집행</span>으로 커리어를 시작해,
             <br />
-            현재는 대기업과 스타트업을 연결하는 <span className="bg-background px-2 py-1 text-foreground" style={{ boxDecorationBreak: "clone" }}>오픈이노베이션</span> 업무를 수행하고 있습니다.
+            현재는 대기업과 스타트업을 연결하는 <span className="bg-background px-1.5 py-1 text-foreground" style={{ boxDecorationBreak: "clone" }}>오픈이노베이션</span> 업무를 수행하고 있습니다.
           </p>
 
           <p className="meta mt-4 opacity-80">{HERO.kicker}</p>
