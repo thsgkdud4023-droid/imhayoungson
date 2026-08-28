@@ -66,7 +66,7 @@ export function OpenInnovation() {
                           label={ws.stat.label}
                           className="mt-2 text-[14vw] lg:text-[4vw]"
                         />
-                        <p className="mt-3 text-base leading-snug text-foreground/80">
+                        <p className="mt-3 text-lg leading-relaxed text-foreground">
                           {ws.description}
                         </p>
                       </div>
