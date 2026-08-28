@@ -90,11 +90,14 @@ export function Hero() {
           className="mt-5 max-w-lg"
         >
           {HERO.ko.map((line) => (
-            <p key={line} className="text-[15px] leading-relaxed opacity-70 lg:text-[17px]">
+            <p
+              key={line}
+              className="text-lg font-semibold leading-[1.55] text-foreground opacity-100 lg:text-xl"
+            >
               {line}
             </p>
           ))}
-          <p className="meta mt-4 opacity-50">{HERO.kicker}</p>
+          <p className="meta mt-4 opacity-80">{HERO.kicker}</p>
         </motion.div>
 
         <div className="mt-[9vh] grid grid-cols-1 items-end gap-y-7 border-t border-current/15 pt-6 lg:mt-auto lg:grid-cols-12 lg:gap-x-8">
