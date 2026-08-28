@@ -18,7 +18,7 @@ export function Experience() {
             transition={{ duration: 0.85, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
             className="border-t border-foreground/25 pt-5 lg:col-span-5"
           >
-            <div className="meta flex items-center justify-between opacity-60">
+            <div className="meta flex items-center justify-between opacity-55">
               <span>{e.period}</span>
               <span>{e.track}</span>
             </div>
