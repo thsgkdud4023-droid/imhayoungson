@@ -218,8 +218,7 @@ export const OPEN_INNOVATION = {
 export const ABOUT = {
   headline: ["I look at startups from both sides", "— investment and collaboration."],
   paragraphs: [
-    "투자조합 운용과 스타트업 투자집행으로 커리어를 시작했습니다.",
-    "이후 오픈이노베이션 현장에서 대기업이 어떤 문제를 가지고 있고, 어떤 스타트업과 기술을 실제로 필요로 하는지 가까이에서 경험했습니다.",
+    "대기업 오픈이노베이션 현장에서 현업이 어떤 문제를 가지고 있고, 어떤 스타트업과 기술을 실제로 필요로 하는지 가까이에서 경험했습니다.",
     "투자와 사업협력 양쪽의 관점에서 기업을 이해하고, 성장 가능성을 판단하며 실제 성장 과정에 기여하는 커리어를 만들어가고 있습니다.",
   ],
   education: [
