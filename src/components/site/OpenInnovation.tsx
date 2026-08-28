@@ -37,7 +37,7 @@ export function OpenInnovation() {
             <PosterPanel id={p.id} caption={`${p.client} · ${p.program}`} />
             <div className="min-w-0 flex-1 grid grid-cols-1 gap-8 lg:grid-cols-12">
               <div className="lg:col-span-5">
-                <p className="meta opacity-60">{p.client}</p>
+                <p className="text-lg font-bold tracking-tight text-foreground">{p.client}</p>
                 <h3 className="tight-display mt-3 text-[13vw] leading-[0.86] lg:text-[4.8vw]">
                   {p.program}
                 </h3>

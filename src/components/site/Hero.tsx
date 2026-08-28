@@ -90,13 +90,13 @@ export function Hero() {
           className="mt-5 max-w-lg"
         >
           <p className="tight-display text-2xl font-black leading-[1.2] tracking-[-0.02em] text-foreground lg:text-[2.1vw]">
-            <span className="inline-block bg-primary px-2 py-1 text-primary-foreground">
+            <span className="inline-block bg-background px-2 py-1 text-foreground">
               투자 검토와 집행
             </span>
             으로 커리어를 시작해,
             <br />
             현재는 대기업과 스타트업의 협업을 만드는{" "}
-            <span className="inline-block bg-primary px-2 py-1 text-primary-foreground">
+            <span className="inline-block bg-background px-2 py-1 text-foreground">
               오픈이노베이션
             </span>{" "}
             업무를 수행하고 있습니다.
