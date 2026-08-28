@@ -139,7 +139,7 @@ export const OPEN_INNOVATION = {
       message:
         "금융 현업 수요를 기반으로 협업과제를 구체화하고, 적합한 스타트업을 발굴·선정해 PoC 실행까지 지원했습니다.",
       counts: [{ value: 7, label: "개 협업과제 운영" }],
-      funnel: null,
+      funnel: null as { steps: string[]; labels: string[]; } | null,
       stats: [],
       flow: ["현업 수요", "과제 구체화", "소싱", "선정", "PoC"],
       bullets: [
