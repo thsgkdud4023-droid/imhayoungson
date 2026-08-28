@@ -12,9 +12,9 @@ import objChart from "@/assets/obj-chart.png";
 import objRocket from "@/assets/obj-rocket.png";
 
 const STICKERS = [
-  { src: objCoins, className: "left-[2%] top-[8%] w-[8vw] max-w-[90px]", depth: 22, rotate: -10 },
-  { src: objChart, className: "right-[2%] top-[10%] w-[7vw] max-w-[80px]", depth: -18, rotate: 7 },
-  { src: objRocket, className: "right-[4%] bottom-[8%] w-[7vw] max-w-[80px]", depth: 14, rotate: -6 },
+  { src: objCoins, className: "left-[4%] top-[-12%] w-[10vw] max-w-[110px]", depth: 22, rotate: -10, duration: 6.2, delay: 0 },
+  { src: objChart, className: "right-[5%] top-[-18%] w-[9vw] max-w-[100px]", depth: -18, rotate: 7, duration: 7.5, delay: 1.4 },
+  { src: objRocket, className: "left-[18%] top-[-16%] w-[9vw] max-w-[100px]", depth: 14, rotate: -6, duration: 6.8, delay: 2.6 },
 ];
 
 
