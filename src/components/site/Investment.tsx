@@ -12,22 +12,21 @@ function FlowRail() {
   const active = useTransform(scrollYProgress, [0.15, 0.85], [0, INVESTMENT.flow.length - 1]);
 
   return (
-    <div ref={ref} className="mt-[10vh] border-y border-foreground/20 py-6">
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
-        {INVESTMENT.flow.map((step, i) => (
-          <motion.div
-            key={step.key}
-            style={{ opacity: useTransform(active, (v) => (Math.abs(v - i) < 0.6 ? 1 : 0.28)) }}
-            className="flex items-baseline gap-3"
-          >
-            <span className="meta bg-lime px-2 py-1 text-lime-foreground">{step.key}</span>
-            <span className="meta">{step.label}</span>
-            {i < INVESTMENT.flow.length - 1 && (
-              <span className="meta ml-auto hidden opacity-40 lg:inline">→</span>
-            )}
-          </motion.div>
-        ))}
-      </div>
+    <div ref={ref} className="mt-[10vh] grid grid-cols-1 gap-6 border-y border-foreground/20 py-8 lg:grid-cols-4">
+      {INVESTMENT.flow.map((step, i) => (
+        <motion.div
+          key={step.key}
+          style={{ opacity: useTransform(active, (v) => (Math.abs(v - i) < 0.6 ? 1 : 0.35)) }}
+        >
+          <div className="meta flex items-center gap-2">
+            <span className="bg-lime px-2 py-1 text-lime-foreground">{step.key}</span>
+            {i < INVESTMENT.flow.length - 1 && <span className="opacity-40">→</span>}
+          </div>
+          <p className="mt-3 text-base leading-snug tracking-tight text-muted-foreground">
+            {step.label}
+          </p>
+        </motion.div>
+      ))}
     </div>
   );
 }
@@ -35,7 +34,7 @@ function FlowRail() {
 export function Investment() {
   return (
     <section id="investment" className="relative px-4 pt-[22vh] lg:px-14">
-      <SectionLabel no="01" title="INVESTMENT" />
+      <SectionLabel no="02" title="INVESTMENT" />
 
       <h2 className="tight-display mt-8 text-[10vw] leading-[0.9] lg:text-[5.4vw]">
         {INVESTMENT.headline.map((line, i) => (
@@ -43,9 +42,11 @@ export function Investment() {
         ))}
       </h2>
 
-      <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-        {INVESTMENT.ko}
-      </p>
+      <div className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        {INVESTMENT.ko.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+      </div>
 
       <FlowRail />
 
@@ -63,33 +64,40 @@ export function Investment() {
               <p className="meta opacity-60">
                 {b.no} — {b.title}
               </p>
-              <div className="mt-6 flex flex-wrap gap-x-12 gap-y-6">
-                {b.stats.map((s) => (
-                  <StatBig
-                    key={s.label}
-                    value={s.value}
-                    label={s.label}
-                    className="text-[18vw] lg:text-[7vw]"
-                  />
-                ))}
-              </div>
+
+              {b.stats.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-x-12 gap-y-6">
+                  {b.stats.map((s) => (
+                    <div key={s.label} className="flex items-baseline gap-2">
+                      <StatBig
+                        value={s.value}
+                        label={s.label}
+                        className="text-[18vw] lg:text-[6.4vw]"
+                      />
+                      <span className="tight-display text-[6vw] leading-none lg:text-[2vw]">
+                        {s.unit}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {b.headline.length > 0 && (
+                <div className="tight-display mt-6 text-[7vw] leading-[1.05] lg:text-[2.4vw]">
+                  {b.headline.map((h) => (
+                    <div key={h}>{h}</div>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div className="lg:col-span-6 lg:col-start-7">
-              <p className="text-2xl leading-[1.25] tracking-tight lg:text-3xl">{b.body}</p>
-
-              {b.bullets.length > 0 && (
-                <ul className="meta mt-8 grid grid-cols-1 gap-2 text-muted-foreground sm:grid-cols-2">
-                  {b.bullets.map((x) => (
-                    <li key={x} className="border-t border-foreground/15 pt-2">
-                      {x}
-                    </li>
-                  ))}
-                </ul>
+              {b.body && (
+                <p className="text-2xl leading-[1.3] tracking-tight lg:text-3xl">{b.body}</p>
               )}
 
               {b.process.length > 0 && (
-                <div className="meta mt-8 flex flex-wrap items-center gap-3">
+                <div className="meta mb-8 flex flex-wrap items-center gap-3">
                   {b.process.map((p, i) => (
                     <span key={p} className="flex items-center gap-3">
                       <span className="border border-foreground/30 px-2 py-1">{p}</span>
@@ -99,8 +107,18 @@ export function Investment() {
                 </div>
               )}
 
+              {b.bullets.length > 0 && (
+                <ul className="mt-2 grid grid-cols-1 gap-2 text-base text-muted-foreground sm:grid-cols-2">
+                  {b.bullets.map((x) => (
+                    <li key={x} className="border-t border-foreground/15 pt-2 leading-snug">
+                      {x}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
               {b.tags.length > 0 && (
-                <div className="meta mt-8 flex flex-wrap gap-2">
+                <div className="meta mt-8 flex flex-wrap gap-2 text-xs opacity-70">
                   {b.tags.map((tag) => (
                     <span key={tag} className="bg-secondary px-3 py-1.5">
                       {tag}
@@ -117,7 +135,7 @@ export function Investment() {
         <span className="meta opacity-60">Government-linked Investment</span>
         {INVESTMENT.government.map((g) => (
           <span key={g.name} className="meta">
-            <span className="bg-lime px-2 py-1 text-lime-foreground">{g.name}</span>{" "}
+            <span className="bg-lime px-2 py-1 text-lime-foreground">{g.name}</span>
             <span className="ml-2 opacity-70">{g.detail}</span>
           </span>
         ))}
