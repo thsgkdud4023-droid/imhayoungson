@@ -51,16 +51,6 @@ export function OpenInnovation() {
                   </div>
                 )}
 
-                {p.counts.length > 0 && (
-                  <div className="tight-display mt-8 text-[7vw] leading-tight lg:text-[1.9vw]">
-                    {p.counts.map((c, i) => (
-                      <span key={c.label}>
-                        {c.value} {c.label}
-                        {i < p.counts.length - 1 && <span className="opacity-40"> + </span>}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </div>
 
               <div className="lg:col-span-8 lg:col-start-5">
