@@ -16,9 +16,11 @@ export function OpenInnovation() {
         ))}
       </h2>
 
-      <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-        {OPEN_INNOVATION.ko}
-      </p>
+      <div className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+        {OPEN_INNOVATION.ko.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+      </div>
 
       <div className="mt-[10vh]">
         {OPEN_INNOVATION.projects.map((p) => (
@@ -37,27 +39,30 @@ export function OpenInnovation() {
                   {p.program}
                 </h3>
                 <p className="meta mt-4 inline-block bg-secondary px-2 py-1">{p.category}</p>
+
+                {p.counts.length > 0 && (
+                  <div className="tight-display mt-8 text-[8vw] leading-tight lg:text-[2.4vw]">
+                    {p.counts.map((c, i) => (
+                      <span key={c.label}>
+                        {c.value} {c.label}
+                        {i < p.counts.length - 1 && <span className="opacity-40"> + </span>}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
-                {p.funnel && (
-                  <div className="mb-10">
-                    <div className="tight-display flex items-baseline gap-4 text-[14vw] leading-none lg:text-[4.4vw]">
-                      {p.funnel.steps.map((s, i) => (
-                        <span key={s} className="flex items-baseline gap-4">
-                          {s}
-                          {i < p.funnel.steps.length - 1 && (
-                            <span className="opacity-30">→</span>
-                          )}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="meta mt-3 opacity-60">{p.funnel.labels.join(" → ")}</p>
-                  </div>
+                <p className="text-2xl leading-[1.25] tracking-tight lg:text-3xl">{p.message}</p>
+
+                {p.highlight && (
+                  <p className="tight-display mt-8 text-[8vw] leading-[0.95] lg:text-[2.8vw]">
+                    {p.highlight}
+                  </p>
                 )}
 
                 {p.stats.length > 0 && (
-                  <div className="mb-10 flex flex-wrap gap-x-14 gap-y-8">
+                  <div className="mt-10 flex flex-wrap gap-x-14 gap-y-8">
                     {p.stats.map((s) => (
                       <StatBig
                         key={s.label}
@@ -69,16 +74,22 @@ export function OpenInnovation() {
                   </div>
                 )}
 
-                {p.highlight && (
-                  <p className="tight-display mb-8 text-[8vw] leading-[0.95] lg:text-[2.8vw]">
-                    {p.highlight}
-                  </p>
+                {p.funnel && (
+                  <div className="mt-10">
+                    <div className="tight-display flex items-baseline gap-4 text-[14vw] leading-none lg:text-[3.6vw]">
+                      {p.funnel.steps.map((s, i) => (
+                        <span key={s} className="flex items-baseline gap-4">
+                          {s}
+                          {i < p.funnel.steps.length - 1 && <span className="opacity-30">→</span>}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="meta mt-3 opacity-60">{p.funnel.labels.join(" → ")}</p>
+                  </div>
                 )}
 
-                <p className="text-2xl leading-[1.25] tracking-tight lg:text-3xl">{p.body}</p>
-
                 {p.flow.length > 0 && (
-                  <div className="meta mt-8 flex flex-wrap items-center gap-3">
+                  <div className="meta mt-10 flex flex-wrap items-center gap-3">
                     {p.flow.map((f, i) => (
                       <span key={f} className="flex items-center gap-3">
                         <span className="border border-foreground/30 px-2 py-1">{f}</span>
@@ -88,30 +99,24 @@ export function OpenInnovation() {
                   </div>
                 )}
 
-                {p.roles.length > 0 && (
-                  <ul className="meta mt-8 grid grid-cols-2 gap-2 text-muted-foreground">
-                    {p.roles.map((r) => (
-                      <li key={r} className="border-t border-foreground/15 pt-2">
-                        {r}
+                {p.bullets.length > 0 && (
+                  <ul className="mt-8 grid grid-cols-1 gap-2 text-base text-muted-foreground sm:grid-cols-2">
+                    {p.bullets.map((b) => (
+                      <li key={b} className="border-t border-foreground/15 pt-2 leading-snug">
+                        {b}
                       </li>
                     ))}
                   </ul>
                 )}
 
                 {p.tags.length > 0 && (
-                  <div className="meta mt-8 flex flex-wrap gap-2">
+                  <div className="meta mt-8 flex flex-wrap gap-2 text-xs opacity-60">
                     {p.tags.map((tag) => (
-                      <span key={tag} className="bg-lime px-3 py-1.5 text-lime-foreground">
+                      <span key={tag} className="border border-foreground/25 px-2 py-1">
                         {tag}
                       </span>
                     ))}
                   </div>
-                )}
-
-                {p.note && (
-                  <p className="meta mt-8 max-w-xl leading-relaxed text-muted-foreground">
-                    {p.note}
-                  </p>
                 )}
               </div>
             </div>
@@ -125,14 +130,14 @@ export function OpenInnovation() {
           {OPEN_INNOVATION.otherPrograms.map((p, i) => (
             <motion.div
               key={p.org}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.7, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              className="border border-foreground/15 p-4 transition-colors hover:bg-secondary"
+              transition={{ duration: 0.6, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              className="border border-foreground/15 px-4 py-5"
             >
               <p className="text-base font-semibold tracking-tight">{p.org}</p>
-              <p className="meta mt-1 text-sm text-muted-foreground">{p.program}</p>
+              <p className="meta mt-1 text-xs text-muted-foreground">{p.program}</p>
             </motion.div>
           ))}
         </div>
