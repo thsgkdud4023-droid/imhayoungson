@@ -54,7 +54,7 @@ export function OpenInnovation() {
               </div>
 
               <div className="min-w-0">
-                <p className="text-2xl font-medium leading-[1.3] tracking-tight text-foreground lg:text-3xl">{p.message}</p>
+                <p className="text-3xl font-medium leading-[1.5] tracking-tight text-foreground lg:text-4xl">{p.message}</p>
 
                 {"workstreams" in p && p.workstreams && p.workstreams.length > 0 && (
                   <div className="mt-10 flex flex-wrap gap-8">
