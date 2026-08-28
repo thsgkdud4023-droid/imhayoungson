@@ -40,7 +40,7 @@ export function Investment() {
         ))}
       </h2>
 
-      <p className="ko-text mt-8 max-w-3xl text-xl leading-relaxed text-foreground/85 lg:whitespace-nowrap lg:text-2xl">
+      <p className="ko-text mt-8 max-w-5xl text-2xl leading-[1.6] text-foreground lg:text-[1.7vw]">
         {INVESTMENT.ko[0]}
         <br />
         {INVESTMENT.ko[1]}
