@@ -57,9 +57,9 @@ export function OpenInnovation() {
                 <p className="text-2xl font-medium leading-[1.3] tracking-tight text-foreground lg:text-3xl">{p.message}</p>
 
                 {"workstreams" in p && p.workstreams && p.workstreams.length > 0 && (
-                  <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                  <div className="mt-10 flex flex-wrap gap-8">
                     {p.workstreams.map((ws) => (
-                      <div key={ws.title}>
+                      <div key={ws.title} className="min-w-[160px] flex-1">
                         <p className="meta text-sm opacity-60">{ws.title}</p>
                         <StatBig
                           value={ws.stat.value}
