@@ -86,10 +86,28 @@ export function Hero() {
           <p className="meta mt-6 opacity-60">{HERO.kicker}</p>
         </motion.div>
 
-        <div className="mt-[12vh] grid grid-cols-2 gap-y-10 border-t border-current/20 pt-8 lg:mt-auto lg:grid-cols-4">
-          {HERO.stats.map((s) => (
-            <StatBig key={s.label} value={s.value} label={s.label} className="text-[14vw] lg:text-[4.6vw]" />
-          ))}
+        <div className="mt-[12vh] grid grid-cols-1 items-end gap-y-10 border-t border-current/20 pt-8 lg:mt-auto lg:grid-cols-12 lg:gap-x-8">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 lg:col-span-7">
+            {HERO.primaryStats.map((s) => (
+              <StatBig
+                key={s.label}
+                value={s.value}
+                label={s.label}
+                className="text-[22vw] lg:text-[6.6vw]"
+              />
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-x-8 gap-y-6 lg:col-span-4 lg:col-start-9">
+            {HERO.secondaryStats.map((s) => (
+              <StatBig
+                key={s.label}
+                value={s.value}
+                label={s.label}
+                className="text-[9vw] opacity-70 lg:text-[2.2vw]"
+                labelClassName="opacity-50"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
