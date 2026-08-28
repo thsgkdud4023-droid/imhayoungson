@@ -57,11 +57,9 @@ function Home() {
 
       <main className="relative z-10">
         <Hero />
-        <Investment />
-        <Bridge />
-        <OpenInnovation />
         <Experience />
-        <Capabilities />
+        <Investment />
+        <OpenInnovation />
         <About />
         <Contact />
       </main>
