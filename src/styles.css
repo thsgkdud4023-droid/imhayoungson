@@ -43,6 +43,7 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
 
+  --color-sky-stage: var(--sky-stage);
   --color-lime: var(--lime);
   --color-lime-foreground: var(--lime-foreground);
   --color-rule: var(--rule);
@@ -84,6 +85,8 @@
   --lime: oklch(0.93 0.21 118);
   --lime-foreground: oklch(0 0 0);
   --rule: oklch(0 0 0 / 8%);
+  --sky-stage: oklch(0.87 0.062 240);
+  --sky-stage-2: oklch(0.93 0.038 235);
 
   --sidebar: oklch(0.977 0.008 95);
   --sidebar-foreground: oklch(0 0 0);
@@ -119,6 +122,8 @@
   --lime: oklch(0.93 0.21 118);
   --lime-foreground: oklch(0 0 0);
   --rule: oklch(1 0 0 / 10%);
+  --sky-stage: oklch(0.42 0.075 250);
+  --sky-stage-2: oklch(0.3 0.06 255);
 
   --sidebar: oklch(0.15 0.004 95);
   --sidebar-foreground: oklch(0.95 0.006 95);
@@ -198,4 +203,10 @@
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+@utility sky-stage {
+  background:
+    radial-gradient(120% 90% at 50% 20%, var(--sky-stage-2), transparent 60%),
+    linear-gradient(180deg, var(--sky-stage) 0%, var(--sky-stage-2) 100%);
 }
