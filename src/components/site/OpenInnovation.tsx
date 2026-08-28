@@ -55,7 +55,7 @@ export function OpenInnovation() {
                         loading="lazy"
                         className="block h-auto w-full max-w-[420px] object-contain transition-transform duration-700 hover:scale-[1.02]"
                       />
-                    </motion.span>
+                    </span>
                   ) : (
                     <span className="tight-display block text-[13vw] leading-[0.86] lg:text-[4.8vw]">
                       {p.program}
