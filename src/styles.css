@@ -210,3 +210,10 @@
     radial-gradient(120% 90% at 50% 20%, var(--sky-stage-2), transparent 60%),
     linear-gradient(180deg, var(--sky-stage) 0%, var(--sky-stage-2) 100%);
 }
+
+/* Dark hyperspace stage used by the hero, bridge and contact sections */
+@utility warp-stage {
+  background-color: oklch(0.12 0 0);
+  color: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 20%);
+}
