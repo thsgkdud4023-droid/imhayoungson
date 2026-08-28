@@ -4,7 +4,7 @@ import { OPEN_INNOVATION } from "@/lib/portfolio-data";
 import { SectionLabel } from "./SectionLabel";
 import { SplitText } from "./SplitText";
 import { StatBig } from "./StatBig";
-import { PosterSliver } from "./PosterSliver";
+import { PosterPanel } from "./PosterSliver";
 
 export function OpenInnovation() {
   return (
