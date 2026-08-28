@@ -7,7 +7,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="warp-stage relative mt-[22vh] flex min-h-[100svh] flex-col overflow-hidden px-4 pb-[14vh] pt-[18vh] lg:px-14"
+      className="warp-stage relative mt-[18vh] flex min-h-[55svh] flex-col overflow-hidden px-4 pb-[8vh] pt-[10vh] lg:px-14"
     >
       <WarpBackground rings density={0.9} />
 
@@ -24,7 +24,7 @@ export function Contact() {
         ))}
       </h2>
 
-      <ul className="relative z-10 mt-[10vh] grid grid-cols-1 border-t border-current/25">
+      <ul className="relative z-10 mt-[6vh] grid grid-cols-1 border-t border-current/25">
         {CONTACT.links.map((l, i) => (
           <motion.li
             key={l.label}

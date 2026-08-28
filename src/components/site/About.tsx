@@ -24,7 +24,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.85, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 text-lg leading-relaxed text-muted-foreground first:mt-0"
+              className="mt-6 text-lg leading-relaxed text-foreground/85 first:mt-0"
             >
               {p}
             </motion.p>
@@ -37,9 +37,16 @@ export function About() {
         <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
           {ABOUT.education.map((e) => (
             <div key={e.title}>
-              <p className="text-base font-semibold tracking-tight">{e.title}</p>
-              {e.lines.map((l) => (
-                <p key={l} className="meta mt-1 text-xs text-muted-foreground">
+              <p className="text-lg font-semibold tracking-tight text-foreground">{e.title}</p>
+              {e.lines.map((l, li) => (
+                <p
+                  key={l}
+                  className={
+                    li === e.lines.length - 1
+                      ? "meta mt-2 text-xs text-muted-foreground"
+                      : "mt-1 text-sm leading-relaxed text-foreground/80"
+                  }
+                >
                   {l}
                 </p>
               ))}

@@ -16,7 +16,7 @@ export function OpenInnovation() {
         ))}
       </h2>
 
-      <div className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+      <div className="mt-8 max-w-3xl text-lg leading-relaxed text-foreground/85">
         {OPEN_INNOVATION.ko.map((line) => (
           <p key={line}>{line}</p>
         ))}
@@ -30,7 +30,7 @@ export function OpenInnovation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-8%" }}
             transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
-            className="border-t border-foreground/20 py-[9vh]"
+            className="border-t border-foreground/20 py-[7vh]"
           >
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
               <div className="lg:col-span-5">
@@ -53,7 +53,7 @@ export function OpenInnovation() {
               </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
-                <p className="text-2xl leading-[1.25] tracking-tight lg:text-3xl">{p.message}</p>
+                <p className="text-2xl font-medium leading-[1.3] tracking-tight text-foreground lg:text-3xl">{p.message}</p>
 
                 {p.highlight && (
                   <p className="tight-display mt-8 text-[8vw] leading-[0.95] lg:text-[2.8vw]">
@@ -100,7 +100,7 @@ export function OpenInnovation() {
                 )}
 
                 {p.bullets.length > 0 && (
-                  <ul className="mt-8 grid grid-cols-1 gap-2 text-base text-muted-foreground sm:grid-cols-2">
+                  <ul className="mt-8 grid grid-cols-1 gap-2 text-base text-foreground/80 sm:grid-cols-2">
                     {p.bullets.map((b) => (
                       <li key={b} className="border-t border-foreground/15 pt-2 leading-snug">
                         {b}
@@ -134,10 +134,10 @@ export function OpenInnovation() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.6, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-              className="border border-foreground/15 px-4 py-5"
+              className="border border-foreground/25 px-4 py-5"
             >
-              <p className="text-base font-semibold tracking-tight">{p.org}</p>
-              <p className="meta mt-1 text-xs text-muted-foreground">{p.program}</p>
+              <p className="text-lg font-semibold tracking-tight text-foreground">{p.org}</p>
+              <p className="meta mt-1 text-sm opacity-80">{p.program}</p>
             </motion.div>
           ))}
         </div>

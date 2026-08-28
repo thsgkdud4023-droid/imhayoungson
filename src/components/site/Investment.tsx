@@ -22,7 +22,7 @@ function FlowRail() {
             <span className="bg-lime px-2 py-1 text-lime-foreground">{step.key}</span>
             {i < INVESTMENT.flow.length - 1 && <span className="opacity-40">→</span>}
           </div>
-          <p className="mt-3 text-base leading-snug tracking-tight text-muted-foreground">
+          <p className="mt-3 text-base leading-snug tracking-tight text-foreground/85">
             {step.label}
           </p>
         </motion.div>
@@ -42,7 +42,7 @@ export function Investment() {
         ))}
       </h2>
 
-      <div className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+      <div className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/85">
         {INVESTMENT.ko.map((line) => (
           <p key={line}>{line}</p>
         ))}
@@ -50,7 +50,7 @@ export function Investment() {
 
       <FlowRail />
 
-      <div className="mt-[8vh]">
+      <div className="mt-[6vh]">
         {INVESTMENT.blocks.map((b) => (
           <motion.article
             key={b.no}
@@ -58,7 +58,7 @@ export function Investment() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="grid grid-cols-1 gap-8 border-b border-foreground/15 py-[8vh] lg:grid-cols-12"
+            className="grid grid-cols-1 gap-8 border-b border-foreground/15 py-[5.5vh] lg:grid-cols-12"
           >
             <div className="lg:col-span-5">
               <p className="meta opacity-60">
@@ -108,7 +108,7 @@ export function Investment() {
               )}
 
               {b.bullets.length > 0 && (
-                <ul className="mt-2 grid grid-cols-1 gap-2 text-base text-muted-foreground sm:grid-cols-2">
+                <ul className="mt-2 grid grid-cols-1 gap-2 text-base text-foreground/80 sm:grid-cols-2">
                   {b.bullets.map((x) => (
                     <li key={x} className="border-t border-foreground/15 pt-2 leading-snug">
                       {x}
